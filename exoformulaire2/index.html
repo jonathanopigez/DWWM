@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExoFormulaire2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <fieldset>
+        <legend>Informations personnelles :</legend>
+        <div class="champ">
+            <label for="nom">Nom de famille :</label>
+            <input type="text" id="nom"
+            name="nom" minlength="2" maxlength="25" required>
+        </div>
+        <div class="champ">
+            <label for="prenom">Prénom :</label>
+            <input type="text" name="prenom" id="prenom" minlength="2" maxlength="25" required>
+        </div>
+        <div class="champ">
+            <label for="mail">Adresse mail :</label>
+            <input type="mail" name="mail" id="mail" required>
+        </div>
+        <div class="champ">
+            <label for="age"> Age :</label>
+            <input type="number" name="age" id="age" min="16" max="99" required>
+        </div>
+        <div class="champ">
+            <input type="radio" name="sexe" id="h" value="homme">
+            <label for="h">Homme</label>
+            <input type="radio" name="sexe" id="f" value="femme">
+            <label for="f">Femme</label>
+        </div>
+        <div class="champ">
+            <label for="pays">Pays de résidence</label>
+            <select name="pays" id="pays">
+                <optgroup label="europe">
+                    <option value="france">France</option>
+                    <option value="belgique">Belgique</option>
+                    <option value="suisse">Suisse</option>
+                </optgroup>
+                <optgroup label="Afrique">
+                    <option value="algerie">Algérie</option>
+                    <option value="tunisie">Tunisie</option>
+                    <option value="maroc">Maroc</option>
+                    <option value="madagascar">Madagascar</option>
+                    <option value="benin">Bénin</option>
+                    <option value="togo">Togo</option>
+
+                </optgroup>
+                <optgroup label="amerique">
+                    <option value="canada">Canada</option>
+                </optgroup>
+            </select>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Compétences / expériences :</legend>
+        <div class="champ">
+            <input type="checkbox" name="competences" id="html" value="html">
+            <label for="html">HTML</label>
+            <input type="checkbox" name="competences" id="css" value="css">
+            <label for="css">CSS</label>
+            <input type="checkbox" name="competences" id="js" value="javascript">
+            <label for="js">JavaScript</label>
+            <input type="checkbox" name="competences" id="php" value="php">
+            <label for="php">PHP</label>
+            <input type="checkbox" name="competences" id="sql" value="sql">
+            <label for="sql">SQL</label>
+            <input type="checkbox" name="competences" id="seo">
+            <label for="seo">SEO</label>
+        </div>
+        <div class="champ">
+            <textarea maxlength="500" name="exp" placeholder="Décrivez une expérience pro (500 caractères max)" cols="30" rows="10"></textarea>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Validiation :</legend>
+        <div class="champ">
+            <label for="pass">Choississez un mot de passe :</label>
+            <input type="password" minlength="8" required>
+        </div>
+        <input type="submit" value="Envoyer">
+    </fieldset>
+</body>
+</html>
