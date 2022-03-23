@@ -1,0 +1,73 @@
+
+
+<!DOCTYPE html> 
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+<head>
+	<meta charset="UTF-8"/> 
+	<title>Document minimal avec une feuille CSS</title>
+	<meta name="author" content="JC Routier"/>
+	<meta name="keywords" content="CSS,minimal,exemple"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	<!-- déclaration de la feuille de style -->
+	<link rel="stylesheet" type="text/css" href="style/style1-probleme.css" title="style juste pour un premier exemple"/> 
+</head>
+
+<body>
+
+<h1> Elément &lt;h1&gt;</h1>
+
+<h2> Elément &lt;h2&gt;</h2>
+
+<p>
+Un paragraphe avec <strong>un peu</strong> de contenu pour illustrer l'utilisation d'une feuille <abbr>CSS</abbr> externe. Etudiez le code source de ce document pour trouver la déclaration de l'utilisation de la feuille de style <code>style1.css</code>.</p>
+<p>
+Voici le code contenu dans la feuille de style <code>style1.css</code> utilisée par cette page&#xA0;:
+</p>
+	
+<pre>
+/* définition de style pour l'élément &lt;body&gt; */
+body {
+	/* on attribue la valeur "rgb(248,248,248)" à la propriété "background-color" (= couleur d'arrière-plan) pour l'élément &lt;body&gt; */
+	background-color	: rgb(248,248,248); /* valeur de couleur en rgb */
+}
+
+h1 {
+	color			: yellow;		/* valeur de couleur nommée  = #FFFF00 = rgb(255,255,0)*/
+	background-color	: navy;
+	font-weight		: bold;
+	font-size		: 24px;
+}
+
+p {
+	background-color	: #888888;		/* valeur de couleur en hexadécimal */
+	color			: #FFFFFF;
+	font-size		: 14px;
+}
+
+pre {
+	color 			: navy;
+    background-color :white;
+}
+
+/* un élément &lt;strong&gt; n'est pas forcément "en gras", ici il sera "rouge et en italique" */
+strong {
+	color 			: yellow; 
+	font-style		: italic;
+	font-weight		: normal;
+}
+
+abbr {
+	text-decoration		: underline;
+}
+</pre>	
+<p>
+Le style s'applique à <strong>tous</strong> les éléments de même type.
+</p>
+
+
+</body>
+
+</html>

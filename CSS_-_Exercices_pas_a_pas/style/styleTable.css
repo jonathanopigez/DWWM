@@ -1,0 +1,24 @@
+body {
+	background-color:  #EEEEEE;
+	width : 80%;
+	margin: auto;
+}
+table {
+    margin-top : 10px;
+    border : 1px solid darkgray;
+}
+
+
+    
+table {
+    background-color: rgba(50,255,50,0);
+}
+thead {
+    background-color : rgba(255,0,0,0);
+}
+th {
+    background-color : rgba(0,0,255,0);
+}
+td {
+    background-color : rgba(255,255,0,0);
+}

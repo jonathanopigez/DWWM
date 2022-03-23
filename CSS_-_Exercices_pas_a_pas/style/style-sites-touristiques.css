@@ -1,0 +1,28 @@
+html {
+  background-color : white;
+}
+body {
+  background-color: #BDBDBD;
+  color : #212121;
+}
+
+section {
+  background-color : #B3E5FC;
+}
+
+h1, h2 {
+  color : #FFFFFF;
+  background-color: #0288D1;
+}
+
+header {
+  color : #757575;
+}
+
+p, header {
+  background-color : #FFFFFF;
+}
+
+strong {
+  color : #4CAF50;
+}

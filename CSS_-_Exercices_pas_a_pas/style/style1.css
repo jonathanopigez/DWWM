@@ -1,0 +1,55 @@
+/* définition de style pour l'élément <body> */
+body {
+	/* on attribue la valeur "rgb(200,200,200)" à la propriété "background-color" (= couleur d'arrière-plan) pour l'élément <body> */
+	background-color: rgb(200,200,200); /* valeur de couleur en rgb */
+} 
+
+
+	/* définition de style pour les éléments <h1> */
+h1 {
+	color			: #90ee90; /* valeur de couleur en hexadécimal #90ee90 = rgb(144, 238, 144)  = lightgreen */		    
+	background-color: purple;	
+}
+
+
+  /* définition de style pour les éléments <h2> */
+h2 {
+/*  color : yellow;                       */
+/*  background-color: rgb(150,120,255);		*/
+/*	text-align : center;                  */
+/*	font-family : monospace;              */
+}
+
+
+	/* valeur de couleur en hexadécimal #8858A8 = rgb(136,88,168) - #FFFFFF = rgb(255,255,255) = white*/
+/*
+p {
+	background-color: #8858A8;		
+	color			: #FFFFFF;        
+	font-size		: 22px;         
+	width 			: 70%;	        
+}
+*/
+
+/*
+pre {
+	color			: navy;             
+	background-color :white;      
+}
+*/
+
+	/* un élément <strong> n'est pas forcément "en gras" , ici il sera "jaune et en italique mais pas en gras" */
+/*
+strong {
+	color 			: yellow;         
+	font-style		: italic;       
+	font-weight		: normal;       
+}
+*/
+
+/*
+abbr {
+	text-decoration : underline;  
+  font-weight : bold;           
+}
+*/
