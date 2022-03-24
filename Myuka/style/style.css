@@ -83,7 +83,8 @@ ul li a:hover{
     align-items: center;
     justify-content: center;
     background-image: url(/image/pngegg.png);
-    width: 100%;
+    background-size: auto;
+    width: auto;
 
 }
 
@@ -593,4 +594,15 @@ div#slider figure {
   left: 0;
   text-align: left;
   animation: 30s slidy infinite;
+}
+
+@media screen and (min-width: 200px) and (max-width: 640px) {
+  body {
+    display:block;
+    clear:both;
+  }
+
+  .section1{
+    width: 100%;
+  }
 }
