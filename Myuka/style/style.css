@@ -66,7 +66,7 @@ ul li a {
 ul li a:hover{
     color: #EB73B9;
     transition: 0.9s;
-    font-size: 130%;
+    font-size: 110%;
 
 }
 
@@ -159,9 +159,7 @@ p{
   width: 650px;
   background-color: white;
   border-radius: 30%;
-  -webkit-mask-image: 
-  -webkit-gradient(linear, left center, right center, 
-    from(rgba(0,0,0,1)), to(rgba(0,0,0,.9)));
+  
   
 
   
@@ -191,9 +189,7 @@ p{
   font-family: 'Parisienne', cursive;
   background-color: white;
   border-radius: 30%;
-  -webkit-mask-image: 
-  -webkit-gradient(linear, left top, right bottom, 
-    from(rgba(0,0,0,1)), to(rgba(0,0,0,.9)));
+  
   
 }
 
@@ -222,9 +218,8 @@ p{
   height: 100%;
   padding: 3em;
   border-radius: 30%;
-  -webkit-mask-image: 
-  -webkit-gradient(linear, left center, right center, 
-    from(rgba(0,0,0,1)), to(rgba(0,0,0,.9)));
+  
+  
   
 
   
@@ -234,9 +229,7 @@ p{
 
   #tableau{
     padding-bottom: 5em;
-    -webkit-mask-image: 
-    -webkit-gradient(linear, left center, right center, 
-      from(rgba(0,0,0,1)), to(rgba(0,0,0,.9)));
+   
     
   
     
@@ -380,7 +373,7 @@ p{
   padding: 0 !important;
   margin: 0 !important;
   border: 0 !important;
-  width: 330px !important;
+  width: 330px;
   height: 40px !important;
 }
 
@@ -596,13 +589,122 @@ div#slider figure {
   animation: 30s slidy infinite;
 }
 
-@media screen and (min-width: 200px) and (max-width: 640px) {
-  body {
-    display:block;
-    clear:both;
+@media screen 
+and (device-width:360px)
+and (-webkit-min-device-pixel-ratio: 3)
+{
+
+  html{
+    width: 360px;
+  }
+body {
+  width: 360px;
+}
+
+  nav{
+    font-size: 40%;
+    justify-content: space-between;
+    align-items: left;
+    width: 360px;
+
+  }
+  
+  ul {
+    display: block;
+  }
+  .section1 {
+    background-size: 150%;
+    height: 740px;
+    
+  }
+ .field-container{
+
+  width: 250px;
   }
 
-  .section1{
-    width: 100%;
+  input{
+    margin-left: -15px;
   }
+
+  .icon-search{
+    margin-left: -8px;
+  }
+  .section2{
+    display: block;
+    height: 1100px;
+  }
+
+  #nomproduit{
+    font-size: 100%;
+    text-align: center
+  }
+
+
+  .barcode{
+    height: 100px;
+    width: 120px;
+    margin-top: 30px;
+  
+  }
+
+ .nutriscore{
+  margin-left: 30px;
+  height: 100px;
+  
+  
+ }
+
+ .gauche{
+   width: 360px;
+   height: 300px;
+
+
+ }
+
+ .produit {
+  
+   padding: 0;
+   margin-left: 30px;
+    
+ }
+
+ .droite{
+   width: 100%;
+  
+ }
+#ingredient{
+text-align: center;
+margin-top: 50px;
 }
+
+p {
+  padding: 0;
+  font-size: 120%;
+  background: none;
+  border-radius: 0%;
+  width: 360px;
+  text-align: center;
+}
+.valeur {
+
+  background-size: 100%;
+
+}
+
+#nutri, #nutri2, #nutri3 h1{
+  font-size: 2em;
+}
+
+#imagevaleur {
+  width: 150%;
+  padding: 0;
+}
+
+#tableau{
+  width: 100%;
+}
+
+
+}
+
+
