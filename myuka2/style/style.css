@@ -1,0 +1,124 @@
+*{
+    margin: .5em;
+}
+
+body{
+    background-image: url(/image/fond.jpg);
+}
+
+.page{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5%;
+    
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.header h1 {
+    font-family: 'Parisienne', cursive;
+    font-weight: bold;
+    font-size: 3em;
+    color: pink;
+   
+}
+
+
+.search{
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+input{
+    width: 300px;
+    margin: 20px;
+}
+
+.produit{
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    
+  
+}
+
+.btn{
+    width: 30%;
+
+}
+
+
+.gauche{
+    display: flex;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+}
+
+.droite{
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.allergene{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+   
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    
+}
+
+
+.infos{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.footer{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
