@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/bootstrap.min.css">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <title>Contact</title>
+</head>
+<body>
+    <div class="container page">
+        <div class="header container">
+            <a  class="home" href="index.html"> <h1>Myuka</h1></a>
+            <span>Obtenez des informations sur les produits alimentaires</span>
+        </div>
+    <fieldset>
+        <form class="form2" method="post" action="mailto:opigezjonathan@gmail.com">
+           <label class="titre">Nom :</label>  <input required class="texte" type="text" size="10" maxlength="40" name="name" /><br />
+            <hr>
+            <label class="titre">Prénom :</label>  <input required class="texte" type="text" size="10" maxlength="40" name="name" /><br />
+            <hr>
+            <label class="titre">Email :</label>  <input required class="texte" type="mail" name="mail"/> <br>
+            <hr>
+            <label class="titre">Mot de passe :</label>  <input required class="texte" type="password" minlength="8" name="password" />
+            <hr>
+            <label class="titre">
+                Veuillez saisir votre date de naissance :</label>
+                <input type="date" name="bday" required>
+              
+              <hr>
+            <label> <span class="titre">Sexe :</span></label> <br />
+	<input type="radio" name="h" value="homme" /> Homme <br />
+	<input type="radio" name="f" value="femme" /> Femme <br />
+    <hr>
+    <label class="titre"> Quelle est votre Régime alimentaire ?</label>
+    <input type="checkbox" name="aucun" value="aucun" /> Aucun régime <br/>
+	<input type="checkbox" name="regime" value="vegetarien" /> Végétarien <br/>
+	<input type="checkbox" name="regime" value="vegan" /> Végan <br/>
+	<input type="checkbox" name="regime" value="lactose" /> Sans lactose <br/>
+	<input type="checkbox" name="regime" value="gluten" /> Sans gluten<br/>
+    <hr>
+	<div class="button">
+	<textarea class="textearea" rows="5" cols="80" wrap="off" name="commentaires" placeholder="Ecrivez un commentaire..." ></textarea><br />
+    
+	<button class="btn btn-success" type="submit" value="envoyer">Envoyer</button>
+</div>
+        </form>
+    </fieldset>
+</div>
+</body>
+</html>
