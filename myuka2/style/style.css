@@ -64,7 +64,7 @@ span{
     
 }
 
-input{
+.input{
     width: 300px;
     margin: 20px;
 }
@@ -315,12 +315,12 @@ footer button a:hover{
 .form2{
     text-align: left;
     padding: 1.5em;
-    font-size: 1.5em;
+    
  
 }
 
 .form2 .texte{
-    display: flex;
+    
     justify-content: center;
 
 }
