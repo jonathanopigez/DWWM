@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $color1 :  (#ff0);
 $color2 :  (#ff4);
 $color3 :  (#222);
@@ -28,4 +29,165 @@ h1{
 
 
 
+=======
+@mixin cards {
+    display: grid;
+    grid-template-rows: repeat(3 1fr);
+    
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family:"Open Sans ", Helvetica, Arial, sans-serif;
+}
+
+
+
+.content {
+    display: grid;
+    grid-template-columns: 280px 2fr 0px;
+    grid-template-rows: min-content 2fr min-content;
+    height:300px;
+    
+  }
+  
+  header{
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    background-color: #444;
+    color: #eee;
+    height: 70px;
+    h1{
+        font-family: "Grand Hotel", serif;
+        color: #ff0;
+        font-weight: 100;
+        margin: 0
+    }
+    p{
+        font-size: 1.5em;
+        
+    }
+
+    form{
+        float: right;
+        margin-top: -47px;
+        padding-right: 2em;
+        
+    }
+  }
+
+  input{
+      font-size: 2em;
+      
+  }
+  nav{
+    background-color: #444;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+  }
+
+  ul {
+      padding-top: 2em;
+
+   
+      li{
+        list-style: none;
+        padding: 1.1em;
+          a{
+              text-decoration: none;
+              color: white;
+                text-decoration: underline 3px #ff0;
+              font-size: 1.5em;
+          }
+      }
+  }
+  footer {
+    grid-column: 1/ span 3;
+    grid-row:3;
+  }
+
+  main{
+      width: 100%;
+  }
+
+  
+  .limonade{
+      background-color: black;
+      color: #eee;
+      background-image: url(/images/bg-presentation.jpg);
+      height: 30%;
+      background-repeat: no-repeat;
+      background-size: 70%;
+      background-position-x: 400px;
+      background-position-y: 40px;
+      width: 100%;
+      
+
+      h1{
+        font-family: "Grand Hotel", serif;
+        font-size: 5em;
+        font-weight: 100;
+        margin: 0;
+        padding: 0.9em 1em .5em 0.3em;
+        width: 750px;
+      }
+
+      p{
+          font-weight: lighter;
+        font-size: 2em;
+        width: 750px;
+        color: #eee;
+        padding: 0.9em 1em .5em 1em;
+      }
+      
+  }
+
+  .quote{
+      display: flex;
+      font-size: 3em;
+      font-style: italic;
+      font-weight: lighter;
+      text-align: right;
+      padding-left: 200px;
+      width: 700px;
+  }
+
+  .mag{
+      display: flex;
+      font-size: 2em;
+      padding-left: 420px;
+    font-family: "Grand Hotel", serif;
+  }
+
+
+  .produits{
+      @include
+
+      h1{
+        font-family: "Grand Hotel", serif;
+      }
+  }
+.cards{
+    justify-content: space-between;
+    @include cards 
+        
+    
+        
+}
+  .product{
+      
+      width: 180px;
+ 
+      border: solid 1px black;
+  
+  }
+>>>>>>> 3b7b2403e78514f1a79e0f52c67f5a8132f997fb
 
