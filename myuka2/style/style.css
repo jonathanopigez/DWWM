@@ -358,22 +358,65 @@ footer button a:hover{
 
 
 @media screen 
+and (device-width:912px)
+and (-webkit-min-device-pixel-ratio: 2)
+{
+    .allergie{
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+      .allergie h5 {
+          font-size: 10px;
+      }
+} 
+
+@media screen 
 and (device-width:360px)
 and (-webkit-min-device-pixel-ratio: 3)
 {
+    *{
+        margin: 0;
+    }
 .page {
     border-radius: 0;
+    padding: 0;
+    
 }
+    .produit{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        
+    }
+    .droite {
+        width: 100%;
+    }
+    .gauche{
+        width: 100%;
 
+    }
     .form2{
         padding: 0;
     }
 
-    *{
-        margin: 0;
-    }
+.allergie{
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+}
 
-    .page {
-        padding: 0;
+  .allergie h5 {
+      font-size: 10px;
+  }
+  
+
+  .cards{
+      flex-direction: column;
+      padding: 1em;
+  }
+    .card{
+        margin: 1em;
     }
 }
