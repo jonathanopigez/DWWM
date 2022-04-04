@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/bootstrap.min.css">
+    <link rel="stylesheet" href="/style/style.css">
+    
+    <title>Nous contacter</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Les Agités de la toile</h1>
+            <span></span>
+            <ul><li><a href="index.html">Accueil</a></li></ul>
+            <ul><li><a href="galerie.html">Galerie</a></li></ul>
+            <ul><li><a href="#">Nous contacter</a></li></ul>
+        </nav>
+    </header>
+    <div class="container">
+    <form class="form2" method="post" action="mailto:opigezjonathan@gmail.com">
+        <label class="titre">Nom :</label> <input required class="texte" type="text"
+            size="10" maxlength="40" name="name" /><br />
+        <hr>
+        <label class="titre">Prénom :</label> <input required class="texte" type="text"
+            size="10" maxlength="40" name="name" /><br />
+        <hr>
+        <label class="titre"> Combien font 5 + 5 ?
+        <input type="text" id="t1" name="question" list="l1" required
+        pattern="10">
+    </label>
+ <datalist id="l1">
+   <option>11</option>
+   <option>8</option>
+   <option>10</option>
+  
+ </datalist>
+        <hr>
+        <div class="button">
+            <textarea class="textearea" rows="5" cols="100%" wrap="off" name="commentaires"
+                placeholder="Ecrivez un commentaire..." style="resize: none;"></textarea>
+                
+        </div>
+        <button class="btn btn-primary" type="submit">Envoyer</button>
+    </form>
+</div>
+    <footer>
+        
+        <span>Site réalisé par Jonathan OPIGEZ – afpa 2022
+    
+        </span>
+    </footer>
+</body>
+</html>

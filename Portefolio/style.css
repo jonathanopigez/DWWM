@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Lekton:wght@700&family=Mate+SC&family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
 html{
 
     scroll-behavior: smooth;
@@ -105,25 +111,24 @@ header h3 {
     color: #fc9b1d;
 }
 
-.main{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-}
+
 
 
 .content {
     margin-top: 100px;
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: left;
-    padding: 0 0 0 30%;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    
    
     
 }
 
 
-.main .content .card {
+.card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,13 +147,14 @@ header h3 {
         justify-content: center;
     }
 }
-.main .content .card .left {
-    flex: 0 0 30%;
+.left {
     padding: 20px;
     background-color: #000;
     color:#fff;
     font-size: 1.1em;
     font-family: 'Montserrat', sans-serif;
+    height: 200px;
+    width: 500px;
 
     
 
@@ -157,10 +163,7 @@ header h3 {
 strong{
     color: #fc9b1d;
 }
-.main .content .card .right {
-    flex: 0 0 70%;
 
-}
 .main .content .card .right img {
 
     height: 100%;
@@ -229,6 +232,7 @@ transition: 0.5s;
     padding-bottom: 40px;
     display: flex;
     flex-direction: column;
+    height: 1000px;
 }
 
 .second .competence{
@@ -508,13 +512,13 @@ margin-left: -45px;
 }
 
 
-.third .Curriculum{
+.third .Projets{
 
     text-align: center;
     margin-top: -80px;
 }
 
-.third .Curriculum h4 {
+.third .Projets h4 {
 
     font-family: 'Montserrat', sans-serif;
     display: inline-block;
@@ -523,24 +527,26 @@ margin-left: -45px;
     font-size: 200%;
     border: 2px solid #a87000; 
     margin-bottom: 30px;
-    border-radius: 20px;
+    border-radius: 45%;
+    padding: .5em;
     
 }
 
-.third .Curriculum .cv {
+.third .Projets .travaux {
     display: flex;
     justify-content: center;
     
 }
 
-.third .Curriculum .cv embed {
-    box-shadow: 20px 20px rgba(0,0,0,.15);
-  transition: all .4s ease;
-    margin-top: 40px;
+.lien{
+    margin: 2em;
+    height: 15em;
     width: 100%;
-    max-width: 850px;
-    height: 300%;
-    min-height: 1200px;
+    width: 25em;
+}
+
+.lien:hover{
+    box-shadow: #fff 0 0 5px;
 }
 
 @media screen and (max-width: 767px) {
