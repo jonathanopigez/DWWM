@@ -1,0 +1,53 @@
+.carousel-item{
+    width: 100%;
+    height: 800px;
+}
+
+body{
+    background: url(/images/apexlegendBackground.jfif);
+}
+
+.page{
+    background: rgb(201, 201, 201,.8);
+    height: 800px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.page h1 {
+    color: rgb(150, 25, 25);
+    font-size: 5em;
+    font-family: 'Squada One', cursive;
+    padding: 1em;
+
+}
+
+.kingmap{
+    height: 500px;
+    
+}
+.sectionMap{
+    display: flex;
+    flex-direction: row;
+    flex: 80M 20%;
+}
+
+.image{
+    float: left;
+}
+.description{
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    width: 500px;
+    margin-left: 100px;
+    font-family: 'Squada One', cursive;
+    
+}
+
+.description h2{
+    font-size: 3em;
+}

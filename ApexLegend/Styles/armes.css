@@ -1,0 +1,71 @@
+body{
+    background: url(/images/apexlegendBackground.jfif);
+}
+
+.container{
+    background:rgba(189, 189, 189, 0.274);
+    height: 970px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    padding-right: 100px;
+    -webkit-box-shadow: 0px 0px 33px 23px rgba(0,0,0,0.75); 
+box-shadow: 0px 0px 33px 23px rgba(0,0,0,0.75);
+}
+
+.bangalore{
+    transition: 1s;
+    display: flex;
+    float: left;
+    z-index: 1;
+    margin-top: -800px;
+    height: 800px;
+}
+
+.bangalore:hover{
+    transition: 1s;
+    margin-left: 15px;
+}
+
+.logoAmmo{
+    transition: .4s;
+    height: 150px;
+   
+}
+.logoAmmo:hover{
+    height: 180px;
+    filter: drop-shadow(0 0 0.75rem rgb(255, 255, 255));
+}
+
+
+#Ammoenergy{
+    transform: rotate(180deg);
+}
+
+#sniperAmmo{
+    transform: rotate(180deg);
+}
+
+#lightAmmo{
+    transform: rotate(180deg);
+}
+
+.ligne2{
+    margin-left: 250px;
+}
+
+.container span{
+    color: rgb(77, 77, 77);
+    font-family: 'Squada One', cursive;
+    font-size: 3em;
+    display: flex;
+    position: absolute;
+    left: 800px;
+    top:700px;
+    bottom: 100px;
+    background: rgb(255, 255, 255,.7);
+    padding: 1em;
+    border-radius: 20px;
+    font-style: italic;
+}

@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+
+
+/* ------------ STYLE NAVBAR -------------- */
+
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    
+}
+
+.triangle{
+width: 22.6%;
+height: 100px;
+border-left: 60px solid transparent;
+border-right: 60px solid transparent;
+border-bottom: 100px solid rgb(255, 255, 255, .8);
+transform: rotate(180deg);
+display: flex;
+justify-content: center;
+
+
+}
+
+.triangle1{
+    border-left: 60px solid rgb(255, 255, 255, .8);
+}
+
+.triangle2{
+    border-right: 60px solid rgb(255, 255, 255, .8);
+}
+
+
+.accueil{
+    display: flex;
+    background-color: white;
+    height: 130px;
+    align-items: center;
+    border-left: solid 130px white;
+    border-right: solid 130px white;
+
+
+    
+    
+    
+}
+
+
+.logo{
+    height: 100px;
+}
+
+#navlogo{
+    display: flex;
+    flex-direction: column;
+    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+}
+
+ul{
+    position: absolute;
+    padding: 0;
+    transform: rotate(180deg);
+}
+
+ul li {
+    list-style: none;
+ 
+    }
+
+.nav .triangle ul li {
+    
+    padding-bottom: 30px;
+    font-size: 2.2em;
+  
+    
+}
+
+
+.nav .triangle ul li a {
+    text-decoration: none;
+    color: rgb(98, 98, 98, .7);
+    font-family: 'Squada One', cursive;
+    transition: .2s;
+    
+    
+}
+
+
+.nav .triangle ul li a:hover{
+   
+    color: rgb(98, 98, 98, 1);
+    border-bottom: 3px solid rgb(182, 35, 35);
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.sub-menu {
+    transform: scale(0);
+    transform-origin: top center;
+    transition: all 300ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    width: 378px;
+    margin-left: -178px;
+    text-align: center;
+    background: rgb(255, 255, 255,.8);
+    margin-top: 29px;
+    
+  }
+  
+  .sub-menu li a {
+    font-size: 30px;
+    background: transparent;
+    padding: 8px 0;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    transform-origin: top center;
+    transition: all 300ms ease-in-out;
+  }
+  .sub-menu li a:last-child {
+    border-bottom: 0;
+  }
+  .menu > li:hover .sub-menu li {
+    transform: scale(1);
+  }
+  .menu > li:hover .sub-menu {
+    transform: scale(1);
+  }
+
+/* ------------ FIN STYLE NAVBAR -------------- */
