@@ -49,19 +49,21 @@ body{
 
 .sommaire .jouer a {
     text-decoration: none;
+    
 }
 
 .sommaire .jouer .btnjouer{
     display: flex;
     color: white;
-    font-size: 3em;
+    font-size: 2.5em;
+    padding: .2em;
     border: solid 8px white;
     background: transparent;
     background-color: rgb(255, 255, 255, .3);
     width: 500px;
     justify-content: center;
     border-radius: 20px;
-    font-family: 'Squada One', cursive;
+    font-family: 'Apex', cursive;
     
 }
 
@@ -69,4 +71,19 @@ body{
     color: rgb(182, 35, 35);
     border-color: rgb(182, 35, 35);
     background-color: rgb(182, 35, 35, .3);
+}
+.sommaire .splash{
+    position: absolute;
+    transition: 1s;
+    height: 500px;
+    z-index: -1;
+ 
+}
+
+.sommaire .splash2{
+    height: 800px;
+    margin-bottom: -500px;
+    margin-top: 100px;
+   
+    
 }

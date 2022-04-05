@@ -50,7 +50,7 @@
     font-size: 6em;
     padding-bottom: .5em;
     margin-top:-.5em;
-    font-family: 'Squada One', cursive;
+    font-family: 'Apex', cursive;
     color: rgb(128, 16, 16);
 }
 
@@ -66,5 +66,31 @@
     font-size: 30px;
     padding: .5em;
     margin-left: -300px;
+}
+
+.btn-map{
+    display: flex;
+    font-size: 2.5em;
+    font-family: Apex;
+    margin: .5em;
+    transition: .4s;
+}
+
+.btn-map:hover{
+    color: rgb(128, 16, 16);
+}
+
+.hop-up{
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+}
+
+.purple{
+    background-color: blueviolet;
+}
+
+.leg{
+    background-color: rgb(255, 238, 0);
 }
 /* FIN-STYLE-MODAL */
