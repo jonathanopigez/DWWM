@@ -21,8 +21,10 @@ body{
 }
 
 .lifelineaccueil{
+    
     transition: 1s;
-    margin-top: 80px;
+    margin-top: 125px;
+    height: 600px
 }
 
 
@@ -42,7 +44,7 @@ body{
     font-size: 2.5em;
     text-align: center;
     justify-content: baseline;
-    margin-top: 400px;
+    margin-top: 350px;
     height: 100px;
     margin-bottom: 150px;
 }
@@ -75,15 +77,16 @@ body{
 .sommaire .splash{
     position: absolute;
     transition: 1s;
-    height: 500px;
+    height: 400px;
     z-index: -1;
  
 }
 
 .sommaire .splash2{
-    height: 800px;
+    height: 600px;
     margin-bottom: -500px;
     margin-top: 100px;
    
     
 }
+

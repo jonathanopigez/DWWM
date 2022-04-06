@@ -1,103 +1,13 @@
-.carousel-item{
-    width: 100%;
-    height: 800px;
-    z-index: 4;
-}
-
 body{
     background: url(/images/apexlegendBackground.jfif);
     background-position-y:800px ;
     
 }
-
+@media screen 
+and (max-width:360px)
+and (-webkit-min-device-pixel-ratio: 3)
+{
 .page{
-    background: rgb(201, 201, 201,.8);
-    height: 800px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    -webkit-box-shadow: 0px 0px 33px 23px rgba(0,0,0,0.75); 
-box-shadow: 0px 0px 33px 23px rgba(0,0,0,0.75);
+    margin-top: 800px;
 }
-
-.page h1 {
-    color: rgb(150, 25, 25);
-    font-size: 5em;
-    font-family: 'Apex', cursive;
-    padding: 1em;
-   
-
-}
-
-
-.kingmap{
-    height: 500px;
-    
-}
-.sectionMap{
-    display: flex;
-    flex-direction: row;
-    flex: 80M 20%;
-}
-
-.image{
-    float: left;
-    display: flex;
-    flex-direction: column;
-    z-index: 3;
-}
-
-.kingcanyonimg{
-    height: 45%;
-    width: 120%;
-    margin-left: -50px;
-    padding-top: 5em;
-    z-index: 2;
-}
-
-.sand{
-    transition: 1s;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    z-index: 1;
-    margin-top: -800px;
-    height: 800px;
-}
-
-.lianes{
-    position: absolute;
-    transition: 1s;
-    display: flex;
-    z-index: 1;
-    height: 1000px;
-    width: 800px;
-    margin-top: -500px;
-    margin-left: 1150px;
-    z-index: 4;
-    padding-right: -1000px;
-}
-.lianes2{
-    height: 1000px;
-   width: 1000px;
-    margin-left: -150px;
-    margin-top: -500px;
-    z-index: 4;
-}
-
-.description{
-    font-size: 1.5em;
-    display: flex;
-    flex-direction: column;
-    float: right;
-    width: 500px;
-    margin-left: 100px;
-    font-family: 'Squada One', cursive;
-    z-index: 3;
-    
-}
-
-.description h2{
-    font-size: 3em;
 }
