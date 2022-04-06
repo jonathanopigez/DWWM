@@ -1,7 +1,7 @@
-*{
+* {
     margin: 0;
     padding: 0;
-   
+
 }
 
 @font-face {
@@ -13,40 +13,40 @@
 /* ------------ STYLE NAVBAR -------------- */
 
 
-.nav{
+.nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: fixed;
     width: 100%;
     z-index: 1000;
-    
-}
-
-.triangle{
-width: 21.5%;
-height: 100px;
-border-left: 60px solid transparent;
-border-right: 60px solid transparent;
-border-bottom: 100px solid rgb(255, 255, 255, .8);
-transform: rotate(180deg);
-display: flex;
-justify-content: center;
-
 
 }
 
-        
-.triangle1{
+.triangle {
+    width: 21.5%;
+    height: 100px;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 100px solid rgb(255, 255, 255, .8);
+    transform: rotate(180deg);
+    display: flex;
+    justify-content: center;
+
+
+}
+
+
+.triangle1 {
     border-left: 60px solid rgb(255, 255, 255, .8);
 }
 
-.triangle2{
+.triangle2 {
     border-right: 60px solid rgb(255, 255, 255, .8);
 }
 
 
-.accueil{
+.accueil {
     display: flex;
     background-color: white;
     height: 130px;
@@ -55,23 +55,23 @@ justify-content: center;
     border-right: solid 130px white;
 
 
-    
-    
-    
+
+
+
 }
 
 
-.logo{
+.logo {
     height: 100px;
 }
 
-#navlogo{
+#navlogo {
     display: flex;
     flex-direction: column;
     filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
 }
 
-ul{
+ul {
     position: absolute;
     padding: 0;
     transform: rotate(180deg);
@@ -79,15 +79,15 @@ ul{
 
 ul li {
     list-style: none;
- 
-    }
+
+}
 
 .nav .triangle ul li {
-    
+
     padding-bottom: 30px;
     font-size: 2em;
-  
-    
+
+
 }
 
 
@@ -96,82 +96,48 @@ ul li {
     color: rgb(98, 98, 98, .7);
     font-family: 'Apex', cursive;
     transition: .2s;
-    
-    
+
+
 }
 
 
-.nav .triangle ul li a:hover{
-   
+.nav .triangle ul li a:hover {
+
     color: rgb(98, 98, 98, 1);
     border-bottom: 3px solid rgb(182, 35, 35);
 }
 
-.menu{
+.menu {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-.sub-menu {
-    transform: scale(0);
-    transform-origin: top center;
-    transition: all 300ms ease-in-out;
-    display: flex;
-    flex-direction: column;
-    width: 378px;
-    margin-left: -178px;
-    text-align: center;
-    background: rgb(255, 255, 255,.8);
-    margin-top: 29px;
-    
-  }
-  
-  .sub-menu li a {
-    font-size: 30px;
-    background: transparent;
-    padding: 8px 0;
-    color: white;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    transform: scale(0);
-    transform-origin: top center;
-    transition: all 300ms ease-in-out;
-  }
-  .sub-menu li a:last-child {
-    border-bottom: 0;
-  }
-  .menu > li:hover .sub-menu li {
-    transform: scale(1);
-  }
-  .menu > li:hover .sub-menu {
-    transform: scale(1);
-  }
-
 /* ------------ FIN STYLE NAVBAR -------------- */
 
 
 /*--------- DEBUT-STYLE-PAGE-MAP-------------- */
 
-.carousel-item{
+.carousel-item {
     width: 100%;
     height: 800px;
     z-index: 4;
 }
 
-.page{
-    background: rgb(201, 201, 201,.8);
+.page {
+    background: rgb(201, 201, 201, .8);
     height: 800px;
     display: flex;
-    
+
     align-items: center;
     flex-direction: column;
     height: 100%;
-    -webkit-box-shadow: 0px 0px 33px 23px rgba(0,0,0,0.75); 
-box-shadow: 0px 0px 33px 23px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 33px 23px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 33px 23px rgba(0, 0, 0, 0.75);
 }
 
- .page header h1 {
+.page header h1 {
     color: rgb(150, 25, 25);
     font-size: 5em;
     font-family: 'Apex', cursive;
@@ -179,29 +145,30 @@ box-shadow: 0px 0px 33px 23px rgba(0,0,0,0.75);
     justify-content: center;
     z-index: 4;
     margin-bottom: 80px;
-   
+
 
 }
 
 
-.kingmap{
+.kingmap {
     height: 500px;
-    
+
 }
-.sectionMap{
+
+.sectionMap {
     display: flex;
     flex-direction: row;
     flex: 80M 20%;
 }
 
-.image{
+.image {
     float: left;
     display: flex;
     flex-direction: column;
     z-index: 3;
 }
 
-.kingcanyonimg{
+.kingcanyonimg {
     height: 45%;
     width: 120%;
     margin-left: -50px;
@@ -209,7 +176,7 @@ box-shadow: 0px 0px 33px 23px rgba(0,0,0,0.75);
     z-index: 2;
 }
 
-.sand{
+.sand {
     transition: 1s;
     display: flex;
     align-items: center;
@@ -219,7 +186,7 @@ box-shadow: 0px 0px 33px 23px rgba(0,0,0,0.75);
     height: 800px;
 }
 
-.lianes{
+.lianes {
     position: absolute;
     transition: 1s;
     display: flex;
@@ -231,35 +198,35 @@ box-shadow: 0px 0px 33px 23px rgba(0,0,0,0.75);
     z-index: 4;
     padding-right: -1000px;
 }
-.lianes2{
+
+.lianes2 {
     height: 1000px;
-   width: 45%;
+    width: 45%;
     margin-left: -100px;
     margin-top: -500px;
     z-index: 4;
 }
 
-.description{
+.description {
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
-    float: right;
     width: 500px;
     margin-left: 100px;
     font-family: 'Squada One', cursive;
     z-index: 3;
-    
+
 }
 
-.description h2{
+.description h2 {
     font-size: 3em;
 }
 
-table{
+table {
     z-index: 4;
     margin-top: 50px;
     margin-bottom: 50px;
-    
+
 }
 
 table th {
@@ -268,31 +235,32 @@ table th {
     color: white;
     border: solid 2px black;
 }
+
 table td {
     padding: 10px;
     border: solid 2px black;
 }
 
-.high{
+.high {
     color: purple;
     filter: drop-shadow(0 0 1rem rgb(255, 10, 222));
 }
 
-.mid{
+.mid {
     color: rgb(63, 149, 214);
     filter: drop-shadow(0 0 1rem rgb(63, 149, 214));
 }
 
-.nom{
+.nom {
     font-weight: 800;
     font-size: 1.2em;
 }
 
-/*--------- FIN-DEBUT-STYLE-PAGE-MAP-------------- */
+/*--------- FIN-STYLE-PAGE-MAP-------------- */
 
 /* STYLE-FOOTER */
 
-footer{
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -300,3 +268,5 @@ footer{
     background: grey;
     height: 50px;
 }
+
+/* FIN-STYLE-FOOTER */
