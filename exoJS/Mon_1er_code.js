@@ -8,6 +8,3 @@ for (i = 0; i < nombreLigne; i++) {
   affichage += nombre;
   console.log(affichage);
 }
-onclick(btn){
-     document.bgColor= "#FFFggF"
-}
