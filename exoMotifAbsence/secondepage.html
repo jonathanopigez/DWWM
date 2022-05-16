@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body onload="addParametersInForm()">
+    <div class="contenu">
+        <form method="put" action="secondepage.html">
+        <h4 class="title1">identification</h4>
+       
+        <div class="identification">
+          
+            
+                <div class="gauche">
+                    <h5>Nom :</h5>
+                    <h5>Prénom :</h5>
+                    <h5>Formation suivie :</h5>
+                </div>
+                <div class="droite">
+                   <div id="parametre1"></div>
+                   <div id="parametre2"></div>
+                   
+                    <div id="formation">
+                    
+                    </div>
+                </div>
+
+        </div>
+        <h4 class="title2">Demande l'autorisation de s'absenter du centre</h4>
+       
+            
+           
+            <div class="demande">
+              <div id="jours"></div> 
+           
+                <div class="gauchedroite1" style="display: flex;">
+               <div class="gauche">
+               
+               <h5>le :</h5>
+               <h5>de :</h4>
+               <h5>à :</h5>
+            </div>
+            <div class="droite">
+                <div id="date"></div>
+                <div id="time1"></div>
+                <div id="time2"></div>
+            </div>
+        </div>
+        </div>
+        <div class="code">
+            <h4 class="title4">Motif</h4>
+        <div id="codemotif"></div>
+    </div>
+        <div class="motifsection"></div>
+        <div class="footer">
+            <h4 class="green cachet">Cachet et signature de l'entreprise ou de : </h4><br>
+            
+            <h4 class="green">Merci d'apposer votre cachet pour justifier de</h4>
+            <div class="div">
+            <h4 class="green">l'absence de la formation de M </h4> <h5 id="nomprenom"></h5>
+        </div>
+        <div class="signature">
+            <h4 class="green">Date et signature du Stagiaire</h4>
+        </div>
+        <button  type="submit" onclick="getInformation()">Envoyer</button>
+        </div>
+        
+    </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="javascript.js"></script>
+
+</body>
+</html>

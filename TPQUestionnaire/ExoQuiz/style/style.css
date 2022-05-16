@@ -1,0 +1,266 @@
+
+/* on impose la font family a toute la page */
+*{
+    font-family: "Archivo Black", sans-serif;
+}
+
+body {
+    background: #293e4b;
+    transition: .75s;
+}
+
+/* CSS pour les couleurs  */
+.green{
+    background: lime;
+}
+.red{
+    background: red;
+}
+.white{
+    color: white;
+}
+
+.btnReponse.correct{
+    background-color: LIME;
+}
+.btnReponse.wrong{
+    background-color: red;
+}
+
+/* CSS DU TITRE */
+.words {
+    color: #ffffff;
+    line-height: 2;
+}
+
+#titre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.words span {
+    font-size: 4rem;
+    animation: move 4s ease-in-out infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(-30%, 0);
+    }
+    50% {
+        text-shadow: 0 25px 50px rgba(0, 0, 0, 0.75);
+    }
+    100% {
+        transform: translate(30%, 0);
+    }
+}
+
+.words span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.words span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.words span:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.words span:nth-child(5) {
+    animation-delay: 2s;
+}
+
+.words span:nth-child(6) {
+    animation-delay: 2.5s;
+}
+
+.words span:nth-child(7) {
+    animation-delay: 3s;
+}
+
+/* CSS DE LA FENETRE DU JEU */
+
+#container1 {
+    height: 500px;
+
+    
+    background: #F3095D;
+    background: -moz-linear-gradient(left, #F3095D 0%, #000000 50%, #f3095d 100%);
+    background: -webkit-linear-gradient(left, #F3095D 0%, #000000 50%, #f3095d 100%);
+    background: linear-gradient(to right, #F3095D 0%, #000000 50%, #f3095d 100%);
+    -webkit-box-shadow: -3px 5px 57px 17px rgba(0, 0, 0, 0.97);
+    box-shadow: -3px 5px 57px 17px rgba(0, 0, 0, 0.97);
+    outline: 12px double rgba(0, 0, 0, 0.87);
+    outline-offset: 0px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+
+ 
+
+
+}
+
+/* CSS DU BOUTON START */
+ 
+#start{
+    font-size: 2em;
+    width: 250px;
+    height: 100px;
+    
+    color: #F3095D;
+    border: solid #F3095D 2px;
+    transition: .5s;
+    
+}
+
+#start:hover{
+    font-size: 2em;
+    width: 250px;
+    height: 100px;
+    animation: rotate .3s  ease-in-out;
+    color: #ffffff;
+    border: solid #ffffff 2px;
+    background-color: #F3095D;
+    border-radius: 50px;
+    text-shadow: white 10px;
+    -webkit-box-shadow: 1px 2px 9px 3px #FFFFFF; 
+     box-shadow: 1px 2px 9px 3px #FFFFFF;
+}
+
+@keyframes rotate{
+    0% { transform: rotatex(0deg);}
+    10% { transform: rotatex(36deg);}
+    20% { transform: rotatex(72deg);}
+    30%{transform: rotatex(108deg);}
+    40% { transform: rotatex(144deg);}
+    50% { transform: rotatex(180deg);}
+    60%{transform: rotatex(216deg);}
+    70% { transform: rotatex(252deg);}
+    80%{transform: rotatex(288deg);}
+    90%{transform: rotatex(324deg);}
+    100% { transform: rotatex(360deg);}
+}
+
+@keyframes rotate1{
+    0% { transform: rotatey(0deg);}
+    10% { transform: rotatey(36deg);}
+    20% { transform: rotatey(72deg);}
+    30%{transform: rotatey(108deg);}
+    40% { transform: rotatey(144deg);}
+    50% { transform: rotatey(180deg);}
+    60%{transform: rotatey(216deg);}
+    70% { transform: rotatey(252deg);}
+    80%{transform: rotatey(288deg);}
+    90%{transform: rotatey(324deg);}
+    100% { transform: rotatey(360deg);}
+}
+
+.fadeOut{
+   
+    animation: fade .5s linear
+}
+
+@keyframes fade{
+    0% { opacity: 100%;}
+    25% { opacity: 75%;}
+    50% { opacity: 50%;}
+    75% { opacity: 25%;}
+    100% {opacity: 0%;}
+}
+
+/* CSS DU COMPTEUR ET DU TIMER*/
+
+#compteur{
+    font-size: 3em;
+    color: white;
+    
+
+}
+
+#timer{
+    color: white;
+    font-size: 2em;
+    position: absolute;
+    left: 120px;
+    top: 150px;
+}
+/* CSS DE LA QUESTION */
+#questiontitle{
+    color: white;
+    margin-bottom: 100px;
+    font-size: 2.5em;
+    border-bottom: 3px solid #F3095D;
+    
+    
+}
+
+
+/* CSS DES BOUTONS REPONSES */
+
+.answersContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.btnReponse{
+    padding: 20px;
+    border-radius: 9px;
+    border: solid 2px white;
+    transition: .5s;
+    margin: 10px;
+    color: #000000;
+}
+
+
+.btnReponse:hover{
+    
+    border-radius: 9px;
+    border: solid 2px white;
+
+color: #ffffff;
+border: solid #ffffff 2px;
+background-color: #F3095D;
+border-radius: 50px;
+text-shadow: white 10px;
+-webkit-box-shadow: 1px 2px 9px 3px #FFFFFF; 
+ box-shadow: 1px 2px 9px 3px #FFFFFF;
+}
+
+/* CSS DU BOUTON NEXT */
+.nextButton{
+    text-align: center;
+    width: 120px;
+    animation: rotate1 .5s ease-in-out;
+    padding: 20px;
+    border-radius: 9px;
+    border: solid 2px white;
+    transition: .5s;
+    margin: 10px;
+    color: #F3095D;
+    
+}
+
+
+
+.nextButton:hover{
+    border-radius: 9px;
+    border: solid 2px white;
+
+color: #ffffff;
+border: solid #ffffff 2px;
+background-color: #F3095D;
+border-radius: 50px;
+text-shadow: white 10px;
+-webkit-box-shadow: 1px 2px 9px 3px #FFFFFF; 
+ box-shadow: 1px 2px 9px 3px #FFFFFF;
+}
+
+svg{
+    height: 20px;
+}
+

@@ -1,0 +1,121 @@
+[{
+        "question": "Que veux dire CSS ?",
+        "choices": [
+            "Cascada Sound System",
+            "Calculating Style Solution",
+            "Cascading Style Sheets",
+            " C'est Super Simple ! "
+        ],
+        "correct": "Cascading Style Sheet",
+        "explanation": ""
+    },
+    {
+        "question": "A quoi sert Bootstrap  ?",
+        "choices": [
+            "A straper tes pieds ",
+            "A faire style je parle anglais ",
+            "Développer des sites avec un design responsive, qui s'adapte à tout type d'écran et un gain de temps danns son code . ",
+            "A utiliser du php via le boot Symfony de Strap "
+        ],
+        "correct": "Développer des sites avec un design responsive, qui s'adapte à tout type d'écran et un gain de temps danns son code .",
+        "explanation": ""
+    },
+    {
+        "question": "Que signifie HTML ?",
+        "choices": [
+            "HomeTabulation of Mailing List",
+            "HyperText Markup Language",
+            "Hyperspace TradeMark Language",
+            "XpTdr Mdr Lol"
+        ],
+        "correct": "HyperText Markup Language",
+        "explanation": "."
+    },
+    {
+        "question": "Qu'est ce qu'un navigateur web ? ",
+        "choices": [
+            "Un logiciel capable d'interpréter et d'afficher du code HTML",
+            "Un outil permettant d'accéder à Internet",
+            "Un réseau social global",
+            "Un Developpeur spécialisé dans la Marine",
+            "Une interface pour lire et recevoir des e-mails"
+        ],
+        "correct": "Un logiciel capable d'interpréter et d'afficher du code HTML",
+        "explanation": ""
+    },
+    {
+        "question": "Quel attribut permet d'indiquer la destination d'un lien ?",
+        "choices": [
+            "class",
+            "href",
+            "src",
+            "link",
+            "a",
+            "data"
+        ],
+        "correct": "href",
+        "explanation": ""
+    },
+    {
+        "question": "Quelle propriété de Flexbox existe vraiment?",
+        "choices": [
+            "flex-wrap",
+            "corn-flex",
+            "re-flex",
+            "tarti-flex",
+            "circon-flex"
+        ],
+        "correct": "flex-wrap",
+        "explanation": ""
+    },
+    {
+        "question": "Quelle déclaration de Flexbox existe ? ",
+        "choices": [
+            "alonge-iteums: space-between",
+            "justify-content: space-XxX",
+            "align-content: space-betweenUs",
+            "display: inline-netflex",
+            "align-self: auto"
+
+        ],
+        "correct": " align-self: auto",
+        "explanation": ""
+    },
+    {
+        "question": "Quel est le rapport entre Java et JavaScript ?",
+        "choices": [
+            "C'est le même langage, mais le nom  JavaScript  est utilisé pour le code s'exécutant dans une page Web.",
+            "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe.",
+            "Java est une version améliorée de JavaScript.",
+            "Java est une île, ça n'a rien à voir !"
+
+        ],
+        "correct": "Ce sont deux langages différents, malgré quelques points communs dans la syntaxe.",
+        "explanation": ""
+    },
+    {
+        "question": "Qu'est-ce qu'une Media Query ? ",
+        "choices": [
+            "Un format de base de données mobiles",
+            "Un ensemble de périphériques réunis par un même protocole",
+            "Un attribut HTML propriétaire de Google",
+            "Une règle CSS permettant de détecter des types de médias",
+            "Un jeu gratuit sur mobile",
+            "une Chaine de télé achat"
+        ],
+        "correct": "Une règle CSS permettant de détecter des types de médias",
+        "explanation": ""
+    },
+    {
+        "question": "Quelle unité dédiée au viewport n'existe *pas* dans les spécifications ?",
+        "choices": [
+            "vh",
+            "vm",
+            "vw",
+            "vmin",
+            "vmax"
+        ],
+        "correct": "vm",
+        "explanation": ""
+    }
+]

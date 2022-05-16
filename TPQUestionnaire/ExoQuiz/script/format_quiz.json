@@ -1,0 +1,27 @@
+[
+ {
+    "question" : "Q1: … ?",
+    
+    "choices" : [
+                    "Choix_1",
+                    "Choix_2",
+                    "Choix_3"
+                ],
+    "correct" : "Choix_1",
+    "explanation ": "explication"
+},
+{
+    "question" : "Q2...?",
+    
+    "choices" : [
+            "Choix_1",
+            "Choix_2",
+            "Choix_3",
+            "Choix_4"
+                ],
+     "correct" : "Choix_1",
+     "explanation" : "explication"
+}
+
+
+]

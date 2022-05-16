@@ -77,7 +77,13 @@ class personnage {
     };
     // ------------- GET & SET ---------------------------------------
     //-------------------EXISTE
-    var win = false;
+    var winner = false;
+    this.getWinner = function () {
+      return winner;
+    };
+    this.setWinner = function (_newwinner) {
+      winner = _newwinner;
+    };
     var existe;
     this.getExiste = function () {
       return existe;
@@ -143,7 +149,7 @@ class match {
     const nbrJoueur = 3;
     var nbrJoueurCreer = 0;
     var nomExistant = false;
-    // --------------FONCTION LANCER LE COMBAT-------------
+
     //FONCTION QUI DEFINI UN NOMBRE ALEATOIRE PAR RAPPORT AU TABLEAU-------------
     this.tableauAleatoire = function () {
       return Math.floor(Math.random() * tableau.length);
@@ -159,6 +165,18 @@ class match {
 
         // nomExistant = false;
       });
+    };
+
+    this.wichWin = function () {
+      if (tableau.length < 1 && perso.getWinner() == false) {
+        perso.setWinner(true);
+        if (perso.getWinner() == true) {
+          colorLog(
+            perso.getNom() + "Gagne le match au bout de " + cptRound + " rounds"
+          );
+          perso.infos();
+        }
+      }
     };
 
     this.run = function () {
@@ -240,17 +258,10 @@ class match {
         }
       }
       //------------------------------ FIN DE LA BOUCLE------------------------------
-      colorLog(
-        perso.getNom() +
-          " Gagne le combat ! Au bout de " +
-          cptRound +
-          " rounds",
-        "gagne"
-      );
     };
 
     // ON LANCE LE COMBAT
-    this.run();
+    // this.run();
     // ON LANCE LE COMBAT
   }
 }
@@ -258,3 +269,5 @@ class match {
 //----------- OBJET -------------
 
 var premierMatch = new match();
+premierMatch.run();
+premierMatch.wichWin();

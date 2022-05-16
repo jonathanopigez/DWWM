@@ -1,0 +1,209 @@
+.contenu{
+    padding: 30px;
+    width: 60%;
+    margin: auto;
+    
+}
+
+
+.identification{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid 2px rgb(172, 170, 175);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+
+.gauche{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 0;
+}
+
+.droite{
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60%
+
+}
+
+.demande{
+    
+    
+    justify-content: space-between;
+
+}
+.gauchedroite1{ 
+    flex-direction: row;
+    justify-content: space-between ;
+    display: none;
+}
+
+.gauchedroite2{
+    flex-direction: row;
+    justify-content: space-between ;
+    display: none;
+}
+
+
+h4{
+    font-size: 1.1em;
+    margin: 0;
+    
+}
+h5{
+    font-weight: 400;
+    margin: 5px;
+    
+}
+
+.title1{
+    color: green;
+    position: absolute;
+    top: 27px;
+    left: 330px;
+    background-color: white;
+}
+
+.title2{
+    color: green;
+    position: absolute;
+    top: 160px;
+    left: 330px;
+    background-color: white;
+}
+
+.title3{
+    color: green;
+    position: absolute;
+    top:  310px;
+    left: 330px;
+    background-color: white;
+}
+
+.title4{
+    color: green;
+    position: absolute;
+    top:  310px;
+    left: 330px;
+    background-color: white;
+}
+
+.demande{
+    border: solid 2px rgb(172, 170, 175);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.contenumotif{
+    border: solid 2px rgb(172, 170, 175);
+    padding: 15px;
+}
+.option{
+    padding-top: 20px;
+}
+.option2{
+    border: dotted 1px black ;
+    padding: 5px;
+    border-radius: 9px;
+    background-color: rgba(126, 126, 172, 0.516);
+    margin-bottom: 5px;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid rgb(67, 69, 197);
+  }
+  input[type=date] {
+    border: none;
+    border-bottom: 2px solid rgb(67, 69, 197);
+  }
+  input[type=datetime] {
+    border: none;
+    border-bottom: 2px solid rgb(67, 69, 197);
+  }
+
+  .footer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+  }
+
+  .div{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      
+  }
+
+  .green{
+      color: green;
+  }
+
+  .cachet{
+      margin-bottom: 150px;
+  }
+
+  #nomprenom{
+      font-size: 1.2em;
+     padding-left: 15px;
+     padding-bottom: 10px;
+      margin: 0;
+  }
+
+  #entreprise{
+      width: 35%;
+      margin-bottom: 20px;
+  }
+
+  #stagiaire{
+      width: 35%;
+      margin-bottom: 50px;
+  }
+
+  .signature{
+      display: flex;
+    border: solid 1px black;
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  button{
+      margin-top: 30px;
+      width: 20%;
+      height: 50px;
+      border: transparent 1px;
+      border-radius: 8px;
+      color: white;
+      background-color: green;
+      
+  }
+.button{
+    display: flex;
+    justify-content: center ;
+}
+
+.code{
+    border: solid 2px rgb(172, 170, 175);
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    height: 100px;
+}
+
+#codemotif{
+    color: red;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.appear{
+    display: flex;
+}
