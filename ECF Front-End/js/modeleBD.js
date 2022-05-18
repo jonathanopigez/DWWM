@@ -170,7 +170,7 @@ function search(e) {
   for (var [idAuteur, auteur] of auteurs.entries()) {
     console.log(auteur.nom);
     console.log(searchString);
-    if (auteur.nom.indexOf(searchString) >= 0) {
+    if (auteur.nom.indexOf(searchString) >= -1) {
       //remplacer le nom de l'auteur ici par le choix de l'utilisateur
       //on est sur le bon: on sauvegarde l'id, puis on sort de la boucle
 
