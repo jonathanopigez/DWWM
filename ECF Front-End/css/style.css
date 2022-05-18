@@ -143,7 +143,6 @@ input:focus:invalid {
   .table-item{
     display: flex;
     flex-direction: column;
-    
     margin-bottom: 50px;
     height: auto;
     text-align: center;
