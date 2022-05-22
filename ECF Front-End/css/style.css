@@ -2,8 +2,9 @@ body {
   font: 1em sans-serif;
   padding: 0;
   margin: 0;
-  font-family: 'Anton', sans-serif;
-  font-family: 'Koulen', cursive;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 600;
+  
 }
 
 form {
@@ -54,10 +55,38 @@ input:focus:invalid {
   color: red;
 }
 
+.main{
+  margin-top: 250px;
+}
 
 
 
+.modal-backdrop{
+  z-index: 0;
+}
 
+.modal-content{
+margin-top: 200px; 
+
+}
+
+.modal{
+  --bs-modal-width:70%;
+}
+
+
+.modal-footer{
+  justify-content: space-between;
+}
+
+.modal-footer p {
+  font-size: 1.2em;
+}
+
+.modal-footer button {
+  color: white;
+  font-weight: 400;
+}
 .input-control{
   display: flex;
   align-items: center;
@@ -92,6 +121,9 @@ input:focus:invalid {
 
 .main-title{
   margin: 30px 0;
+  font-weight: 800;
+  border-bottom: 2px solid rgba(233, 186, 33, 0.856);
+  
 }
 
 /* Table */
@@ -106,7 +138,11 @@ input:focus:invalid {
 }
 
 .table-title{
-  padding: 15px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-weight: 100;
+  color: rgb(233, 180, 33);
+  font-family: 'Fredoka One', cursive;
 }
 
 .table-item{
@@ -128,8 +164,11 @@ input:focus:invalid {
 
 .table-item p {
   padding: 15px;
+  font-size: 1.2em;
+  opacity: .9;
   
 }
+
 
 /* RESPONSIVE */
 
@@ -139,6 +178,7 @@ input:focus:invalid {
   }
   .table-title{
     display: none;
+    
   }
   .table-item{
     display: flex;
@@ -161,9 +201,22 @@ input:focus:invalid {
     width: 100%;
   }
 
+  .navbar h1{
+    font-size: 0;
+  }
 
+  .navbar h1 .logoFeather{
+    position: absolute;
+    left: 35px;
+    height: 0px;
+  }
+  .trie{
+    width: 67%!important;
+  }
+#compteur{
+  top: 0px;
 }
-
+}
 button{
   cursor: pointer;
   width: 100px;
@@ -171,10 +224,15 @@ button{
   background-color: rgb(255, 166, 0);
   height: 50px;
   border-radius: 9px;
+  transition: .5s;
 }
 
 button img{
   height: 30px;
+}
+
+button:hover{
+  background-color: rgb(218, 141, 0);
 }
 
 .filtericon{
@@ -182,23 +240,149 @@ button img{
   margin: 10px;
 }
 .trie{
+  
   background: #dbdbdb;
-  width: 20.5%;
+  width: 19.4%;
   border-radius: 9px;
   display: flex;
+  margin: 20px;
 }
 .trie div {
+  
   font-size: 1.5em;
   cursor: pointer;
   height: 100%;
   padding: 10px;
+  transition: .5s;
 }
 
 
-
+.btn-trie:hover{
+  background-color: #acacac;
+}
 
 
 #trieAlbums{
   border-top-right-radius: 9px;
   border-bottom-right-radius: 9px;
+}
+.navbar{
+background-color: white;
+display: flex;
+justify-content: space-between;
+position: fixed;
+z-index: 1;
+top: 0;
+-webkit-box-shadow: 0px 0px 49px 8px rgba(109,109,109,0.95); 
+box-shadow: 0px 0px 49px 8px rgba(109,109,109,0.95);
+height: 120px;
+
+ 
+}
+.titleBD{
+ 
+color: rgb(68, 68, 68);
+font-size: 2.5em;
+margin: 10px;
+font-family: 'Fredoka One', cursive;
+}
+.titleBD .logo{
+  padding-bottom: 25px;
+}
+
+.invisible{
+  display: none;
+}
+.paniertitle h2{
+  font-weight: 800;
+  padding-top: 10px;
+  color: rgb(255, 153, 1);
+}
+#panier{
+ 
+  padding: 50px;
+}
+.logo{
+  height: 80px;
+  margin-right: 15px;
+}
+
+.hautpage{
+  display: none;
+}
+.logoFeather{
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+.logopanier{
+  opacity: .8;
+  height: 35px;
+  margin-right: 50px;
+  cursor: pointer;
+  margin-top: -40px;
+  
+}
+
+#compteur{
+  font-size: .8rem;
+  position: absolute;
+  bottom: 40px;
+  right: 45px;
+  background-color: rgb(243, 94, 94);
+  color: rgb(255, 255, 255);
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  padding-left: 7.5px;
+  padding-top: 3.9px;
+  
+  
+  
+  
+ 
+
+  
+  
+}
+
+.animation{
+  animation: shake 1s linear;
+  
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+.quantityContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantityContainer button{
+  height: 30px;
+  width: 30px;
+  margin-top: -20px;
+  padding: 0px;
+}
+
+.modal-body .table-item{
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+  
 }

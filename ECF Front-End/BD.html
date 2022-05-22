@@ -5,17 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Koulen&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
     <title>Les BD</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container hautpage">
         <h1>Liste des BD</h1>
 
         <div class="row">
@@ -51,7 +55,44 @@
 
             </div>
         </div>
-      <main class="main">
+    </div>
+    
+        <nav class="navbar container-fluid" id="nav" >
+            
+            <h1 class="titleBD"><img src="images/open-book.png" alt="" class="logo">BDothèque <img src="images/feather-pen.png" alt="" class="logoFeather"></h1>
+           <div class="panier-icons">
+           
+            <img onclick="afficherPanier()" data-bs-toggle="modal" data-bs-target="#exampleModal"  src="images/sac-de-courses.png" alt="" class="logopanier"><h5 class="invisible" id="compteur"></h5>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+
+                  <div class="modal-content">
+                  <div class="modal-header" id="modalHeader">
+
+                  </div>
+                    <div class="modal-body" id="panier">
+                        
+                      
+                    </div>
+                    <div class="modal-footer">
+                        <p id="total"> Total de votre commande :</p>
+                        <div>
+                      <button onclick="reset()" type="button" class=" btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                      <button onclick="reset()" type="button" data-bs-dismiss="modal">Payer</button>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           
+           </div>
+            
+           
+        </nav>
+        <!-- <div id="panier" class="container invisible">
+                
+        </div> -->
+      <main class="main container">
 
         <div class="input-control">
             <label for="search">
@@ -63,9 +104,9 @@
         <div class="trie">
             
             <img class="filtericon" src="images/filter.png" alt="">
-            <div id="trieAuteur" onclick="trieParAuteur()">Auteur</div>
-            <div id="trieAlbums" onclick="trieParAlbums()">Albums</div>
-        </div>
+            <div id="trieAuteur" class="btn-trie" onclick="trieParAuteur()">Auteurs</div>
+            <div id="trieAlbums" class="btn-trie" onclick="trieParAlbums()">Albums</div>
+        </div> 
             <div class="table">
                 <h3 class="table-title"></h3>
                 <h3 class="table-title">Album</h3>
@@ -85,16 +126,16 @@
             
 
       </main>
+      
 
-    </div>
+   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="data/albums.js"></script>
     <script src="data/series.js"></script>
     <script src="data/auteurs.js"></script>

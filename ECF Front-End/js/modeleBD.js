@@ -1,5 +1,9 @@
 const searchInput = document.querySelector("#search");
 const searchResult = document.querySelector(".table-results");
+const panierHTML = $("#panier");
+const nav = $("#nav");
+const modalHeader = document.getElementById("modalHeader");
+const total = document.getElementById("total");
 const srcImg = "images/"; // emplacement des images de l'appli
 const albumDefaultMini = srcImg + "noComicsMini.jpeg";
 const albumDefault = srcImg + "noComics.jpeg";
@@ -8,15 +12,21 @@ const srcAlbum = "albums/"; // emplacement des images des albums en grand
 const buttonAuteur = $("#trieAuteur");
 const buttonAlbums = $("#trieAlbums");
 const albumsArray = "data/albums.js";
+var nbrArticle = 0;
 
 jQuery(document).ready(function ($) {
-  searchInput.addEventListener("keyup", search);
+  const compteur = document.getElementById("compteur");
+  searchInput.addEventListener("input", search);
   function CreateBookList() {
     albums.forEach((album) => {
       serie = series.get(album.idSerie);
       auteur = auteurs.get(album.idAuteur);
       var nomFic = serie.nom + "-" + album.numero + "-" + album.titre;
-
+      nomFic = nomFic.replaceAll("'", "");
+      nomFic = nomFic.replaceAll("!", "");
+      nomFic = nomFic.replaceAll(".", "");
+      nomFic = nomFic.replaceAll('"', "");
+      nomFic = nomFic.replaceAll("?", "");
       const listItem = document.createElement("div");
       listItem.setAttribute("class", "table-item");
       listItem.innerHTML =
@@ -40,10 +50,11 @@ jQuery(document).ready(function ($) {
         album.prix +
         "€" +
         "</p>" +
-        '<button type="submit" class="achat" id="button' +
-        album.idSerie +
-        '" onclick="addBasket()"><img src="images/cart.png"/></button>';
-
+        '<button value="' +
+        nomFic +
+        '" class="achat" type="submit" id="' +
+        album.prix +
+        '"><img src="images/cart.png"/></button>';
       searchResult.append(listItem);
     });
   }
@@ -161,16 +172,17 @@ jQuery(document).ready(function ($) {
 });
 
 //#endregion
-
+compteur.innerHTML = nbrArticle;
 function search(e) {
   var albumFilter = new Map();
   searchString = e.target.value.toLowerCase();
   console.log(searchString);
   var idAuteurToSave = 0;
   for (var [idAuteur, auteur] of auteurs.entries()) {
+    auteur.nom = auteur.nom.toLowerCase();
     console.log(auteur.nom);
     console.log(searchString);
-    if (auteur.nom.indexOf(searchString) >= -1) {
+    if (auteur.nom.indexOf(searchString) >= 0) {
       //remplacer le nom de l'auteur ici par le choix de l'utilisateur
       //on est sur le bon: on sauvegarde l'id, puis on sort de la boucle
 
@@ -229,9 +241,9 @@ function search(e) {
       album.prix +
       "€" +
       "</p>" +
-      '<button type="submit" class="achat" id="button' +
-      album.idSerie +
-      '" onclick="addBasket()"><img src="images/cart.png"/></button>';
+      '<button value="' +
+      nomFic +
+      '" class="achat"><img src="images/cart.png"/></button>';
 
     searchResult.append(listItem);
   });
@@ -285,7 +297,9 @@ function trieParAuteur() {
           album.prix +
           "€" +
           "</p>" +
-          '<button class="achat"><img src="images/cart.png"/></button>';
+          '<button value="' +
+          nomFic +
+          '" class="achat"><img src="images/cart.png"/></button>';
 
         searchResult.append(listItem);
       }
@@ -305,6 +319,7 @@ function trieParAlbums() {
         serie = series.get(album.idSerie);
         auteur = auteurs.get(album.idAuteur);
         var nomFic = serie.nom + "-" + album.numero + "-" + album.titre;
+        nomFic = nomFic.replaceAll("'", "");
         console.log(
           serie.nom +
             ", Album N°" +
@@ -338,7 +353,9 @@ function trieParAlbums() {
           album.prix +
           "€" +
           "</p>" +
-          '<button class="achat"><img src="images/cart.png"/></button>';
+          '<button value="' +
+          nomFic +
+          '" class="achat"><img src="images/cart.png"/></button>';
 
         searchResult.append(listItem);
       }
@@ -350,67 +367,100 @@ function trieParAlbums() {
 
 // #region fonction panier
 
-function saveBasket(basket) {
-  localStorage.setItem("basket", JSON.stringify(basket));
+var exist = false;
+var panier = new Array();
+var totalPrix = 0;
+function afficherPanier() {
+  reset();
+  nbrArticle = 0;
+  panierHTML.removeClass("invisible");
+  console.log(panier);
+  const panierTitle = document.createElement("div");
+  panierTitle.setAttribute("class", "paniertitle");
+  panierTitle.innerHTML = "<h2>" + "Mon panier :" + "</h2>";
+  modalHeader.append(panierTitle);
+  panier.forEach((article) => {
+    const listArticle = document.createElement("div");
+    listArticle.setAttribute("class", "table-item");
+    listArticle.innerHTML =
+      '<div class = "container-image">' +
+      '<img src="' +
+      article.img +
+      '"/>' +
+      "</div>" +
+      '<p class="album">' +
+      article.nom +
+      "</p>" +
+      '<div class="quantityContainer">' +
+      '<button id="quantityMoins" onclick="quantityMoins()">-</button>' +
+      '<p classe="quantity">' +
+      "x" +
+      " " +
+      article.quantity +
+      "</p>" +
+      '<button id="quantityPlus" onclick="quantityPlus()">+</button>' +
+      "</div>" +
+      "<p>" +
+      article.prix +
+      " €" +
+      "</p>";
+    panierHTML.append(listArticle);
+    total.innerHTML =
+      "<p>Total de votre commande :" + " " + totalPrix + "€" + "</p>";
+  });
 }
 
-function getBasket() {
-  let basket = localStorage.getItem("basket");
-  if (basket == null) {
-    return [];
-  } else {
-    return JSON.parse(basket);
-  }
+function reset() {
+  panierHTML.addClass("invisible");
+  compteur.classList.add("invisible");
+  document.getElementById("panier").innerHTML = "";
+  document.getElementById("modalHeader").innerHTML = "";
+  console.log("effacer");
 }
 
-function addBasket(product) {
-  let basket = getBasket();
-  console.log(basket);
-  let foundProduct = basket.find((p) => p.id == product.id);
-  if (foundProduct != undefined) {
-    foundProduct.quantity++;
-  } else {
-    product.quantity = 1;
-    basket.push(product);
-  }
+$(document).ready(function () {
+  $(".achat").click(function () {
+    var prix = $(this).attr("id");
+    var prixAfficher = parseFloat(prix);
+    nbrArticle += 1;
+    totalPrix = totalPrix + prixAfficher;
+    compteur.classList.remove("invisible");
+    compteur.classList.add("animation");
+    compteur.innerHTML = nbrArticle;
+    let article = new Object();
+    exist = true;
+    article.existe = exist;
+    article.quantity = 1;
+    article.prix = prixAfficher;
+    article.nom = $(this).val();
+    article.img = srcAlbum + $(this).val() + ".jpg";
+    articleExistant = panier.find((a) => a.nom == article.nom);
 
-  saveBasket(basket);
-}
-
-function removeFromBasket(product) {
-  let basket = getBasket();
-  basket = basket.filter((p) => p.id != product.id);
-  saveBasket(basket);
-}
-
-function changeQuantity(product, quantity) {
-  let basket = getBasket();
-  let foundProduct = basket.find((p) => p.id == product.id);
-  if (foundProduct != undefined) {
-    foundProduct.quantity += quantity;
-    if (foundProduct.quantity <= 0) {
-      removeFromBasket(foundProduct);
-    } else {
-      saveBasket(basket);
+    if (articleExistant != undefined) {
+      console.log("deja existant");
+      articleExistant.quantity++;
+      articleExistant.prix += article.prix;
+      article.existe = false;
+      console.log(panier);
     }
-  }
-}
+    if (article.existe == true) {
+      panier.push(article);
 
-function getNumberProduct() {
-  let basket = getBasket();
-  let number = 0;
-  for (let product of basket) {
-    number += product.quantity;
-  }
-  return number;
-}
+      console.log(panier);
+    } else {
+      return;
+    }
+    setTimeout(function () {
+      compteur.classList.remove("animation");
+    }, 500);
+  });
+});
 
-function getTotalPrice() {
-  let basket = getBasket();
-  let total = 0;
-  for (let product of basket) {
-    total += product.quantity * product.prix;
-  }
-  return total;
+function quantityMoins(e) {
+  console.log("quantity -");
+  article.quantity = article.quantity++;
+}
+function quantityPlus(e) {
+  console.log("quantity +");
 }
 // #endregion
