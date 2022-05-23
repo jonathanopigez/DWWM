@@ -2,7 +2,6 @@ const searchInput = document.querySelector("#search");
 const searchResult = document.querySelector(".table-results");
 const panierHTML = $("#panier");
 const nav = $("#nav");
-const modalHeader = document.getElementById("modalHeader");
 const total = document.getElementById("total");
 const srcImg = "images/"; // emplacement des images de l'appli
 const albumDefaultMini = srcImg + "noComicsMini.jpeg";
@@ -13,6 +12,7 @@ const buttonAuteur = $("#trieAuteur");
 const buttonAlbums = $("#trieAlbums");
 const albumsArray = "data/albums.js";
 var nbrArticle = 0;
+
 
 jQuery(document).ready(function ($) {
   const compteur = document.getElementById("compteur");
@@ -373,12 +373,11 @@ var totalPrix = 0;
 function afficherPanier() {
   reset();
   nbrArticle = 0;
-  panierHTML.removeClass("invisible");
   console.log(panier);
   const panierTitle = document.createElement("div");
   panierTitle.setAttribute("class", "paniertitle");
   panierTitle.innerHTML = "<h2>" + "Mon panier :" + "</h2>";
-  modalHeader.append(panierTitle);
+  panierHTML.append(panierTitle);
   panier.forEach((article) => {
     const listArticle = document.createElement("div");
     listArticle.setAttribute("class", "table-item");
@@ -392,13 +391,13 @@ function afficherPanier() {
       article.nom +
       "</p>" +
       '<div class="quantityContainer">' +
-      '<button id="quantityMoins" onclick="quantityMoins()">-</button>' +
+      '<button class="quantityMoins" onclick="quantiteMoins()" data-id="'+article.nom+'">-</button>' +
       '<p classe="quantity">' +
       "x" +
       " " +
       article.quantity +
       "</p>" +
-      '<button id="quantityPlus" onclick="quantityPlus()">+</button>' +
+      '<button class="quantityPlus" onclick="quantitePlus()" data-id="'+article.nom+'">+</button>' +
       "</div>" +
       "<p>" +
       article.prix +
@@ -408,13 +407,14 @@ function afficherPanier() {
     total.innerHTML =
       "<p>Total de votre commande :" + " " + totalPrix + "€" + "</p>";
   });
+ 
 }
 
+
+
 function reset() {
-  panierHTML.addClass("invisible");
   compteur.classList.add("invisible");
   document.getElementById("panier").innerHTML = "";
-  document.getElementById("modalHeader").innerHTML = "";
   console.log("effacer");
 }
 
@@ -431,7 +431,7 @@ $(document).ready(function () {
     exist = true;
     article.existe = exist;
     article.quantity = 1;
-    article.prix = prixAfficher;
+    article.prix = prixAfficher * article.quantity;
     article.nom = $(this).val();
     article.img = srcAlbum + $(this).val() + ".jpg";
     articleExistant = panier.find((a) => a.nom == article.nom);
@@ -454,13 +454,47 @@ $(document).ready(function () {
       compteur.classList.remove("animation");
     }, 500);
   });
+  
 });
 
-function quantityMoins(e) {
-  console.log("quantity -");
-  article.quantity = article.quantity++;
+const quantitePlus = async(afficherPanier)=>{
+  await afficherPanier;  
+  console.log("fonction plus");
+  let plus = document.querySelectorAll(".quantityPlus");
+  console.log(plus);
+  plus.forEach((positive) => {
+  
+  console.log(positive);
+
+
+  for(i=0; i<panier.length; i++){
+    if(panier[i].nom == positive.dataset.id){
+      return (
+      panier[i].quantity ++);
+    }
+
+  }
+
+  })
 }
-function quantityPlus(e) {
-  console.log("quantity +");
+const quantiteMoins = async(afficherPanier)=>{
+  await afficherPanier;
+  console.log("fonction moins");
+  let moins = document.querySelectorAll(".quantityMoins");
+  console.log(moins);
+  moins.forEach((negative) => {
+  
+  console.log(negative);
+
+
+  for(i=0; i<panier.length; i++){
+    if(panier[i].nom == negative.dataset.id){
+      panier[i].quantity --,
+      console.log("quantite --"),
+      console.log(panier);
+    }
+  }
+
+  })
 }
 // #endregion
