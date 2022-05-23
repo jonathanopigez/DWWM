@@ -284,7 +284,7 @@ font-family: 'Fredoka One', cursive;
 #panier{
   
   padding: 50px;
-  overflow-y: scroll;
+  
 }
 .logo{
   height: 80px;
@@ -371,9 +371,21 @@ font-family: 'Fredoka One', cursive;
   border: none;
   right: 0;
   width: 40%;
-  
+
  
 }
+
+.accordion-collapse{
+  overflow-y: scroll;
+  border: solid 1px rgba(0, 0, 0, 0.26);
+  border-top: 10px transparent;
+  margin-top: 59px;
+  -webkit-box-shadow: -1px 11px 25px 1px #000000; 
+  box-shadow: -1px 11px 25px 1px #000000;
+  
+}
+
+
 .footer{
   padding: 20px;
   font-size: 1.2em;
