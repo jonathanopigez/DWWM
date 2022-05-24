@@ -59,11 +59,9 @@
     
         <nav class="navbar container-fluid" id="nav" >
             
-            <h1 class="titleBD"><img src="images/open-book.png" alt="" class="logo">BDothèque <img src="images/feather-pen.png" alt="" class="logoFeather"></h1>
+            <h1 class="titleBD" id="titleBD"><img src="images/open-book.png" alt="" class="logo">BDothèque <img src="images/feather-pen.png" alt="" class="logoFeather"></h1>
+            <div id="zone_meteo"></div>
            <div class="panier-icons">
-           
-            <!-- <img onclick="afficherPanier()" data-bs-toggle="modal" data-bs-target="#exampleModal"  src="images/sac-de-courses.png" alt="" class="logopanier"><h5 class="invisible" id="compteur"></h5> -->
-            
             
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item ">
@@ -71,95 +69,25 @@
                    
                     <img onclick="afficherPanier()" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"  src="images/sac-de-courses.png" alt="" class="logopanier"><h5 class="invisible" id="compteur"></h5>
                 
-                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div id="collapseOne" class="accordion-collapse collapse scrollable" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body scroller" id='panier'>
 
                       
                     </div>
                     <div class="footer">
                         <p id="total"> Total de votre commande :</p>
-                        <button onclick="reset()" type="button" data-bs-toggle="collapse" class=" btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+           
                         <button onclick="reset()" type="button" data-bs-dismiss="collapse">Payer</button>
                     </div>
                   </div>
                 </div>
    
               </div>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-
-                  <div class="modal-content">
-                  <div class="modal-header" id="modalHeader">
-
-                  </div>
-                    <div class="modal-body" id="panier">
-                        
-                      
-                    </div>
-                    <div class="modal-footer">
-                        <p id="total"> Total de votre commande :</p>
-                        <div>
-                      <button onclick="reset()" type="button" class=" btn btn-danger" data-bs-dismiss="modal">Fermer</button>
-                      <button onclick="reset()" type="button" data-bs-dismiss="modal">Payer</button>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-           
-           </div>
-             -->
-           
         </nav>
-        <!-- <div id="panier" class="container invisible">
-                
-        </div> -->
+      
       <main class="main container">
-
+          <div class="hautdepage"id="onTop">
+<img class="up" src="images/up-arrow.png"><span>Haut de page</span></div>
         <div class="input-control">
             <label for="search">
                 <img src="images/search-interface-symbol.png" alt="">
@@ -197,8 +125,7 @@
    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+  <script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -206,6 +133,7 @@
     <script src="data/series.js"></script>
     <script src="data/auteurs.js"></script>
     <script src="js/modeleBD.js"></script>
+    <script src="js/meteo.js"></script>
 </body>
 
 </html>

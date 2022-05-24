@@ -15,6 +15,7 @@ var nbrArticle = 0;
 
 
 jQuery(document).ready(function ($) {
+
   const compteur = document.getElementById("compteur");
   searchInput.addEventListener("input", search);
   function CreateBookList() {
@@ -391,13 +392,13 @@ function afficherPanier() {
       article.nom +
       "</p>" +
       '<div class="quantityContainer">' +
-      '<button class="quantityMoins" onclick="quantiteMoins()" data-id="'+article.nom+'">-</button>' +
-      '<p classe="quantity">' +
+      '<button class="quantityMoins" onclick="quantiteMoins()"data-id="'+article.nom+'">-</button>' +
+      '<p class="quantity">' +
       "x" +
-      " " +
+      
       article.quantity +
       "</p>" +
-      '<button class="quantityPlus" onclick="quantitePlus()" data-id="'+article.nom+'">+</button>' +
+      '<button class="quantityPlus" onclick="quantitePlus()" id="'+article.prix+'"  data-id="'+article.nom+'">+</button>' +
       "</div>" +
       "<p>" +
       article.prix +
@@ -419,6 +420,7 @@ function reset() {
 }
 
 $(document).ready(function () {
+  /* Ajout d'un article au panier. */
   $(".achat").click(function () {
     var prix = $(this).attr("id");
     var prixAfficher = parseFloat(prix);
@@ -427,7 +429,7 @@ $(document).ready(function () {
     compteur.classList.remove("invisible");
     compteur.classList.add("animation");
     compteur.innerHTML = nbrArticle;
-    let article = new Object();
+     article = new Object();
     exist = true;
     article.existe = exist;
     article.quantity = 1;
@@ -457,26 +459,46 @@ $(document).ready(function () {
   
 });
 
+/**
+ * J'essaie d'ajouter un écouteur d'événement à chaque bouton avec la classe "quantityPlus" puis,
+ * lorsque le bouton est cliqué, je veux augmenter la quantité de l'article dans le panier.
+ * 
+ * Le problème est que l'écouteur d'événement ne fonctionne pas. J'ai essayé d'ajouter l'écouteur
+ * d'événement au bouton en dehors de la fonction et cela fonctionne.
+ * 
+ * J'ai également essayé d'ajouter l'écouteur d'événement au bouton à l'intérieur de la fonction et
+ * cela ne fonctionne pas.
+ * 
+ * @param afficherPanier - une fonction qui affiche le panier
+ */
 const quantitePlus = async(afficherPanier)=>{
   await afficherPanier;  
-  console.log("fonction plus");
+  
+  
   let plus = document.querySelectorAll(".quantityPlus");
-  console.log(plus);
   plus.forEach((positive) => {
   
-  console.log(positive);
+ 
+  positive.addEventListener("click", ()=>{
+    console.log(positive);
+  })
+ for(i=0;i<panier.length; i++){
+ 
+  if(article.nom === positive.dataset.id && panier[i].nom === positive.dataset.id){
+      
+       
+        panier[i].quantity ++;
+ 
+        
+        
+      }
+ }
+  
 
-
-  for(i=0; i<panier.length; i++){
-    if(panier[i].nom == positive.dataset.id){
-      return (
-      panier[i].quantity ++);
-    }
-
-  }
 
   })
 }
+
 const quantiteMoins = async(afficherPanier)=>{
   await afficherPanier;
   console.log("fonction moins");
@@ -497,4 +519,10 @@ const quantiteMoins = async(afficherPanier)=>{
 
   })
 }
+
+/* bouton Faire défiler vers le haut de la page. */
+$("#onTop").click(function(){
+  $('html,body').animate({scrollTop: 0}, 'slow');
+})
+
 // #endregion

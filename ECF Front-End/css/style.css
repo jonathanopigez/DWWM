@@ -142,66 +142,6 @@ input:focus:invalid {
   
 }
 
-
-/* RESPONSIVE */
-
-@media screen and (max-width: 700px) {
-  .table{
-    display: block;
-  }
-  .table-title{
-    display: none;
-    
-  }
-  .table-item{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 50px;
-    height: auto;
-    text-align: center;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    
-
-    
-  }
- .titleBD{
-   top: 4px;
- }
-
-  .table-item p {
-    padding: 0;
-    margin: 0;
-  }
-
-  .table-item button {
-    width: 100%;
-  }
-
-  .navbar h1{
-    font-size: 0;
-  }
-
-  .navbar h1 .logoFeather{
-    position: absolute;
-    left: 35px;
-    height: 0px;
-  }
-  .trie{
-    width: 67%!important;
-  }
-
-.navbar{
-  height: 80px!important;
-}
-.accordion-item{
-  
-  width: 80%!important;
-  
- 
-}
-
-
-}
 button{
   cursor: pointer;
   width: 100px;
@@ -355,16 +295,25 @@ font-family: 'Fredoka One', cursive;
 }
 .quantityContainer{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  height: 32px;
+  width: 108px;
+  border: 1px solid rgba(0, 0, 0, 0.397);
+  
 }
 
 .quantityContainer button{
   height: 30px;
   width: 30px;
-  margin-top: -20px;
+ border-radius: 0%;
   padding: 0px;
 }
+
+.quantityContainer p{
+  margin-top: 13px;
+}
+
 
 .accordion-item{
   position: absolute;
@@ -376,13 +325,15 @@ font-family: 'Fredoka One', cursive;
 }
 
 .accordion-collapse{
+  position: absolute;
   overflow-y: scroll;
   border: solid 1px rgba(0, 0, 0, 0.26);
   border-top: 10px transparent;
   margin-top: 59px;
-  -webkit-box-shadow: -1px 11px 25px 1px #000000; 
-  box-shadow: -1px 11px 25px 1px #000000;
-  
+  -webkit-box-shadow: -1px 11px 25px 1px #696969; 
+  box-shadow: -1px 11px 25px 1px #8b8b8b;
+  max-height: 850px;
+  background-color: white;
 }
 
 
@@ -394,4 +345,156 @@ font-family: 'Fredoka One', cursive;
 #panier .table-item{
   grid-template-columns: repeat(4,1fr);
   
+}
+#zone_meteo{
+ position: absolute;
+ display: flex;
+ flex-direction: column;
+ left: 28%;
+ background-color: rgba(105, 41, 4, 0.781);
+ padding: 10px;
+ color: white;
+ height: 120px;
+ border-left: solid 2px rgb(124, 124, 124);
+ border-right: solid 2px rgb(121, 121, 121);
+}
+
+#zone_meteo .currentWeather{
+  position: absolute;
+  left: 80px;
+  height: 100px;
+  width: 100px;
+  top: 30px;
+  
+}
+
+.meteoinfos{
+  display: flex ;
+  flex-direction: row;
+}
+
+.infosadd{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 30px;
+  top: 40px;
+  opacity: 0;
+  transition: 1s;
+ 
+}
+#zone_meteo:hover .infosadd{
+  
+  opacity: 1!important;
+  animation: slideLeft 1s ease-in;
+
+}
+
+@keyframes slideLeft{
+  0% {
+    transform: translateX(-100%);
+    visibility: visible
+  }
+  100%{
+    transform:translateX(0)
+  }
+}
+
+
+.rangement{
+  display: flex;
+}
+
+.rangement img{
+  height: 25px;
+  margin-right: 20px;
+}
+
+.hautdepage{
+  position: fixed;
+  left: 100px;
+  bottom: 10px;
+}
+
+.hautdepage span{
+  color: #fcc01b;
+  opacity: 0;
+  transition: .4s;
+}
+
+.up{
+  position: fixed;
+  left: 100px;
+  bottom: 10px;
+  height: 80px;
+  transition: .4s;
+}
+
+.up:hover{
+  bottom: 40px;
+}
+
+#onTop:hover span{
+  opacity: 1;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 700px) {
+  .table{
+    display: block;
+  }
+  .table-title{
+    display: none;
+    
+  }
+  .table-item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    height: auto;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    
+
+    
+  }
+ .titleBD{
+   top: 4px;
+ }
+
+  .table-item p {
+    padding: 0;
+    margin: 0;
+  }
+
+  .table-item button {
+    width: 100%;
+  }
+
+  .navbar h1{
+    font-size: 0;
+  }
+
+  .navbar h1 .logoFeather{
+    position: absolute;
+    left: 35px;
+    height: 0px;
+  }
+  .trie{
+    width: 67%!important;
+  }
+
+.navbar{
+  height: 80px!important;
+}
+.accordion-item{
+  
+  width: 80%!important;
+  
+ 
+}
+
+
 }
