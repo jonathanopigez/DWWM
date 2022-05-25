@@ -216,7 +216,7 @@ font-family: 'Fredoka One', cursive;
 }
 
 
-.paniertitle h2{
+.paniertitle {
   font-weight: 800;
   padding-top: 10px;
   color: rgb(255, 153, 1);
@@ -272,6 +272,11 @@ font-family: 'Fredoka One', cursive;
   
 }
 
+#total{
+  font-size: 2em;
+  color: green;
+}
+
 .animation{
   animation: shake 1s linear;
   
@@ -298,7 +303,7 @@ font-family: 'Fredoka One', cursive;
   justify-content: space-evenly;
   align-items: center;
   height: 32px;
-  width: 108px;
+  width: 100px;
   border: 1px solid rgba(0, 0, 0, 0.397);
   
 }
@@ -308,6 +313,7 @@ font-family: 'Fredoka One', cursive;
   width: 30px;
  border-radius: 0%;
   padding: 0px;
+  font-weight: 800;
 }
 
 .quantityContainer p{

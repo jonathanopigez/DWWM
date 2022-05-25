@@ -265,6 +265,11 @@ function trieParAuteur() {
         serie = series.get(album.idSerie);
         auteur = auteurs.get(album.idAuteur);
         var nomFic = serie.nom + "-" + album.numero + "-" + album.titre;
+        nomFic = nomFic.replaceAll("'", "");
+        nomFic = nomFic.replaceAll("!", "");
+        nomFic = nomFic.replaceAll(".", "");
+        nomFic = nomFic.replaceAll('"', "");
+        nomFic = nomFic.replaceAll("?", "");
         console.log(
           auteur.nom +
             ", Album N°" +
@@ -321,6 +326,11 @@ function trieParAlbums() {
         auteur = auteurs.get(album.idAuteur);
         var nomFic = serie.nom + "-" + album.numero + "-" + album.titre;
         nomFic = nomFic.replaceAll("'", "");
+        nomFic = nomFic.replaceAll("'", "");
+        nomFic = nomFic.replaceAll("!", "");
+        nomFic = nomFic.replaceAll(".", "");
+        nomFic = nomFic.replaceAll('"', "");
+        nomFic = nomFic.replaceAll("?", "");
         console.log(
           serie.nom +
             ", Album N°" +
@@ -371,14 +381,13 @@ function trieParAlbums() {
 var exist = false;
 var panier = new Array();
 var totalPrix = 0;
+var j =0;
 function afficherPanier() {
   reset();
-  nbrArticle = 0;
+  var prixBase = article.prix;
+ 
   console.log(panier);
-  const panierTitle = document.createElement("div");
-  panierTitle.setAttribute("class", "paniertitle");
-  panierTitle.innerHTML = "<h2>" + "Mon panier :" + "</h2>";
-  panierHTML.append(panierTitle);
+  
   panier.forEach((article) => {
     const listArticle = document.createElement("div");
     listArticle.setAttribute("class", "table-item");
@@ -392,21 +401,22 @@ function afficherPanier() {
       article.nom +
       "</p>" +
       '<div class="quantityContainer">' +
-      '<button class="quantityMoins" onclick="quantiteMoins()"data-id="'+article.nom+'">-</button>' +
-      '<p class="quantity">' +
-      "x" +
+      '<button class="quantityMoins" onclick="quantiteMoins('+j+')"id="bm_'+j+'"value="'+prixBase+'">-</button>' +
+      '<p id="p_'+j+'" class="quantity">' +
+      
       
       article.quantity +
       "</p>" +
-      '<button class="quantityPlus" onclick="quantitePlus()" id="'+article.prix+'"  data-id="'+article.nom+'">+</button>' +
+      '<button class="quantityPlus" onclick="quantitePlus('+ j +')" value="'+prixBase+'" id="bp_'+j+'">+</button>' +
       "</div>" +
-      "<p>" +
+      '<p id="prixQuantity'+j+'">' +
       article.prix +
       " €" +
       "</p>";
     panierHTML.append(listArticle);
     total.innerHTML =
-      "<p>Total de votre commande :" + " " + totalPrix + "€" + "</p>";
+       totalPrix + "€" ;
+      j++
   });
  
 }
@@ -414,44 +424,70 @@ function afficherPanier() {
 
 
 function reset() {
-  compteur.classList.add("invisible");
+  // compteur.classList.add("invisible");
   document.getElementById("panier").innerHTML = "";
-  console.log("effacer");
+ 
 }
 
 $(document).ready(function () {
   /* Ajout d'un article au panier. */
+  // j'ajoute une fonction au click sur chaque bouton avec la classe 'achat'
   $(".achat").click(function () {
+    // je stock l'id du bonton clicker dans une variable prix (l'id des bouton correspondent aux prix du livre)
+    
     var prix = $(this).attr("id");
+    console.log($(this).attr("value"));
+    // le ParseFloat permet de changer la valeur string en nombre decimal
     var prixAfficher = parseFloat(prix);
+    // on incremente le nombre d'article vu qu'on viens de le clicker
     nbrArticle += 1;
+    // on incremente le prix total
     totalPrix = totalPrix + prixAfficher;
+    // ajout et suppression de class pour la notification
     compteur.classList.remove("invisible");
     compteur.classList.add("animation");
     compteur.innerHTML = nbrArticle;
-     article = new Object();
+    // on creer l'article
+    article = new Object();
+    // on lui dit qu'il exist
     exist = true;
     article.existe = exist;
+    // on lui met une quantité a 1
     article.quantity = 1;
+    // on defini son prix, ici le prix * la quantité
     article.prix = prixAfficher * article.quantity;
+    // l'article prend la value du bouton clicker(chaque bouton possede comme value le titre du livre qui correspond)
     article.nom = $(this).val();
+    // on lui donne l'image grace au srcalbum + la valeur du bonton qui correspond au nom
+    // + jpg, ce qui nous renvoie dans le dossier image et pointe la bonne image pour le livre
     article.img = srcAlbum + $(this).val() + ".jpg";
+    // on parcours le panier pour verifié si un article y est deja, dans ce cas on ne le push pas
+    // on incrémente juste la quantité
     articleExistant = panier.find((a) => a.nom == article.nom);
-
+   // vérification s'il existe + incrémentation
     if (articleExistant != undefined) {
+     
       console.log("deja existant");
+      // s'il existe on lui incrémente la quantité
       articleExistant.quantity++;
+      
+      // on incrémente le prix
       articleExistant.prix += article.prix;
+      // on reinitialise la valeur exist a false
       article.existe = false;
       console.log(panier);
+      afficherPanier();
     }
+    // si l'article n'éxiste pas dans le panier, alors on peut le push
     if (article.existe == true) {
       panier.push(article);
-
+      afficherPanier(panier);
       console.log(panier);
+      // sinon on met fin a la fonction
     } else {
       return;
     }
+    // timeout pour l'animation de la notification
     setTimeout(function () {
       compteur.classList.remove("animation");
     }, 500);
@@ -459,70 +495,49 @@ $(document).ready(function () {
   
 });
 
-/**
- * J'essaie d'ajouter un écouteur d'événement à chaque bouton avec la classe "quantityPlus" puis,
- * lorsque le bouton est cliqué, je veux augmenter la quantité de l'article dans le panier.
- * 
- * Le problème est que l'écouteur d'événement ne fonctionne pas. J'ai essayé d'ajouter l'écouteur
- * d'événement au bouton en dehors de la fonction et cela fonctionne.
- * 
- * J'ai également essayé d'ajouter l'écouteur d'événement au bouton à l'intérieur de la fonction et
- * cela ne fonctionne pas.
- * 
- * @param afficherPanier - une fonction qui affiche le panier
- */
-const quantitePlus = async(afficherPanier)=>{
-  await afficherPanier;  
+async function quantitePlus(idbtn){
+  let totalPanier = document.getElementById("total")
+  let valuePrix = document.getElementById('bp_' + idbtn.toString()).value;
+  let prixSeul = parseFloat(valuePrix)
+  let quantity = document.getElementById('p_' + idbtn.toString());
+  let prixQuantity = document.getElementById('prixQuantity'+idbtn.toString());
+  article.quantity ++;
+  quantity.innerText = parseInt(quantity.innerText)+1; 
+  prixQuantity.innerText = parseFloat(prixQuantity.innerText)+prixSeul+"€";
+  totalPrix = totalPrix + prixSeul;
+  prixAffichable = totalPrix.toString()
+  totalPanier.innerText = prixAffichable+"€"
   
-  
-  let plus = document.querySelectorAll(".quantityPlus");
-  plus.forEach((positive) => {
-  
- 
-  positive.addEventListener("click", ()=>{
-    console.log(positive);
-  })
- for(i=0;i<panier.length; i++){
- 
-  if(article.nom === positive.dataset.id && panier[i].nom === positive.dataset.id){
-      
-       
-        panier[i].quantity ++;
- 
-        
-        
-      }
- }
   
 
-
-  })
 }
 
-const quantiteMoins = async(afficherPanier)=>{
-  await afficherPanier;
-  console.log("fonction moins");
-  let moins = document.querySelectorAll(".quantityMoins");
-  console.log(moins);
-  moins.forEach((negative) => {
-  
-  console.log(negative);
-
-
-  for(i=0; i<panier.length; i++){
-    if(panier[i].nom == negative.dataset.id){
-      panier[i].quantity --,
-      console.log("quantite --"),
-      console.log(panier);
-    }
+async function quantiteMoins(idbtn){
+  let totalPanier = document.getElementById("total")
+  let valuePrix = document.getElementById('bm_' + idbtn.toString()).value;
+  let prixSeul = parseFloat(valuePrix)
+  let quantity = document.getElementById('p_'+idbtn.toString())
+  let prixQuantity = document.getElementById('prixQuantity'+idbtn.toString());
+  article.quantity --;
+  if(article.quantity <= 0){
+    article.existe = false
+    articleSupprimer = panier.find((a) => a.existe == false);
+    console.log(articleSupprimer);
+    panier.splice(articleSupprimer);
   }
-
-  })
-}
+  quantity.innerText = parseInt(quantity.innerText)-1;
+  prixQuantity.innerText = parseFloat(prixQuantity.innerText)-prixSeul+"€";
+  totalPrix = totalPrix - prixSeul;
+  prixAffichable = totalPrix.toString()
+  totalPanier.innerText = prixAffichable+ "€"
+  
+  
+  }
 
 /* bouton Faire défiler vers le haut de la page. */
 $("#onTop").click(function(){
   $('html,body').animate({scrollTop: 0}, 'slow');
 })
+
 
 // #endregion

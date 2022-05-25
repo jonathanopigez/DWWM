@@ -121,7 +121,7 @@ body {
     font-size: 2em;
     width: 250px;
     height: 100px;
-    animation: rotate .3s  ease-in-out;
+    animation: rotate .3s  ease-in-out infinite;
     color: #ffffff;
     border: solid #ffffff 2px;
     background-color: #F3095D;
