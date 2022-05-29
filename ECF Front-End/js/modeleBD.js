@@ -13,23 +13,31 @@ const buttonAlbums = $("#trieAlbums");
 const albumsArray = "data/albums.js";
 var nbrArticle = 0;
 
-
 jQuery(document).ready(function ($) {
-
+  // création du compteur de notification (petite bulle rouge sur le logo panier)
   const compteur = document.getElementById("compteur");
+  // on ajoute un évènement sur l'input text, au moment de l'écriture
   searchInput.addEventListener("input", search);
+  // fonction pour créer la liste des livres au chargement de la page
   function CreateBookList() {
+    // pour chaque album on va effectuer une action
     albums.forEach((album) => {
+      // on va chercher les infos avec les id, pour faire correspondres les auteurs avec les albums
       serie = series.get(album.idSerie);
       auteur = auteurs.get(album.idAuteur);
+      // on definit nomFic qui va nous aider à trouver l'image qui correspond au livre
       var nomFic = serie.nom + "-" + album.numero + "-" + album.titre;
+      // on remplace tous les caractères spéciaux afin de faire correspondre le nomFic avec le nom du fichier jpg
       nomFic = nomFic.replaceAll("'", "");
       nomFic = nomFic.replaceAll("!", "");
       nomFic = nomFic.replaceAll(".", "");
       nomFic = nomFic.replaceAll('"', "");
       nomFic = nomFic.replaceAll("?", "");
+      // on créer une div
       const listItem = document.createElement("div");
+      // on lui donne la class table-item
       listItem.setAttribute("class", "table-item");
+      // dans cette div on veux ce contenu -->
       listItem.innerHTML =
         '<div class = "container-image">' +
         '<img src="' +
@@ -56,6 +64,7 @@ jQuery(document).ready(function ($) {
         '" class="achat" type="submit" id="' +
         album.prix +
         '"><img src="images/cart.png"/></button>';
+      // on dit que listItem est enfant de searchResult
       searchResult.append(listItem);
     });
   }
@@ -173,22 +182,27 @@ jQuery(document).ready(function ($) {
 });
 
 //#endregion
+
 compteur.innerHTML = nbrArticle;
+
+// fonction pour rechercher par auteur
 function search(e) {
+  // on crée un nouveau tableau qui va contenir les auteurs qui contiennent les lettres qu'on a entrées dans la barre de recherche
   var albumFilter = new Map();
+  // la variable searchString prend la valeur de ce qu'on rentre dans l'input, convertie en minuscule grâce à la methode toLowerCase()
   searchString = e.target.value.toLowerCase();
-  console.log(searchString);
+  // on initialise une variable qui va sauvegarder temporairement les auteurs pour les comparer avec la recherche
   var idAuteurToSave = 0;
+  // pour chaque Id auteur de auteurs.js on convertie le nom de l'auteur en minuscule grâce à la methode toLowerCase pour pouvoir effectuer la recherche sans avoir
+  // a mettre la majuscule au nom de l'auteur
   for (var [idAuteur, auteur] of auteurs.entries()) {
     auteur.nom = auteur.nom.toLowerCase();
-    console.log(auteur.nom);
-    console.log(searchString);
+    // si l'une des lettres dans le nom de l'auteur correspondent aux lettres rentrer dans la barre de recherche alors ...
     if (auteur.nom.indexOf(searchString) >= 0) {
       //remplacer le nom de l'auteur ici par le choix de l'utilisateur
       //on est sur le bon: on sauvegarde l'id, puis on sort de la boucle
-
-      console.log("on est làààààààààà  " + idAuteur);
       idAuteurToSave = parseInt(idAuteur);
+      // pour chaque id album de albums.js si id de l'album = l'id sauvegarder alors on filtre le resultat et on l'envoie dans le tableau
       for (var [idAlbums, album] of albums.entries()) {
         if (album.idAuteur == idAuteurToSave) {
           serie = series.get(album.idSerie);
@@ -214,6 +228,7 @@ function search(e) {
     }
   }
   searchResult.innerHTML = "";
+  // pour chaque album du tableau filtrer on recreer l'architecture précedente
   albumFilter.forEach((album) => {
     serie = series.get(album.idSerie);
     auteur = auteurs.get(album.idAuteur);
@@ -244,7 +259,9 @@ function search(e) {
       "</p>" +
       '<button value="' +
       nomFic +
-      '" class="achat"><img src="images/cart.png"/></button>';
+      '" class="achat" type="submit" id="' +
+      album.prix +
+      '"><img src="images/cart.png"/></button>';
 
     searchResult.append(listItem);
   });
@@ -281,7 +298,6 @@ function trieParAuteur() {
         );
         const listItem = document.createElement("div");
         listItem.setAttribute("class", "table-item");
-
         listItem.innerHTML =
           '<div class = "container-image">' +
           '<img src="' +
@@ -294,7 +310,7 @@ function trieParAuteur() {
           album.titre +
           "</p>" +
           '<p classe="titre">' +
-          series.get(album.idSerie).nom +
+          serie.nom +
           "</p>" +
           '<p classe="auteur">' +
           auteur.nom +
@@ -305,7 +321,9 @@ function trieParAuteur() {
           "</p>" +
           '<button value="' +
           nomFic +
-          '" class="achat"><img src="images/cart.png"/></button>';
+          '" class="achat" type="submit" id="' +
+          album.prix +
+          '"><img src="images/cart.png"/></button>';
 
         searchResult.append(listItem);
       }
@@ -355,7 +373,7 @@ function trieParAlbums() {
           album.titre +
           "</p>" +
           '<p classe="titre">' +
-          series.get(album.idSerie).nom +
+          serie.nom +
           "</p>" +
           '<p classe="auteur">' +
           auteur.nom +
@@ -366,7 +384,9 @@ function trieParAlbums() {
           "</p>" +
           '<button value="' +
           nomFic +
-          '" class="achat"><img src="images/cart.png"/></button>';
+          '" class="achat" type="submit" id="' +
+          album.prix +
+          '"><img src="images/cart.png"/></button>';
 
         searchResult.append(listItem);
       }
@@ -377,17 +397,20 @@ function trieParAlbums() {
 //#endregion
 
 // #region fonction panier
-
+// on defini un variable exist pour dire si un article exist ou non dans le panier
 var exist = false;
+// on creer le panier qui est un tableau
 var panier = new Array();
+// on initialise le prix total du panier a 0
 var totalPrix = 0;
-var j =0;
+// j est une varianle qui va nous aider a nommer les balises avec des id unique
+var j = 0;
+// fonction qui construit le panier
 function afficherPanier() {
   reset();
+  // on stock le prix de base d'un article seul dans une variable prix de base
   var prixBase = article.prix;
- 
-  console.log(panier);
-  
+  // pour chaque element du panier il va créer une div, on va lui donner une class et proceder au même model que l'index
   panier.forEach((article) => {
     const listArticle = document.createElement("div");
     listArticle.setAttribute("class", "table-item");
@@ -401,32 +424,44 @@ function afficherPanier() {
       article.nom +
       "</p>" +
       '<div class="quantityContainer">' +
-      '<button class="quantityMoins" onclick="quantiteMoins('+j+')"id="bm_'+j+'"value="'+prixBase+'">-</button>' +
-      '<p id="p_'+j+'" class="quantity">' +
-      
-      
+      // ici un bouton qui va gerer la quantité vers le bas, grace a la fonction quantiteMoins sur le click
+      '<button class="quantityMoins" onclick="quantiteMoins(' +
+      j +
+      ')"id="bm_' +
+      j +
+      '"value="' +
+      prixBase +
+      '">-</button>' +
+      '<p id="p_' +
+      j +
+      '" class="quantity">' +
       article.quantity +
       "</p>" +
-      '<button class="quantityPlus" onclick="quantitePlus('+ j +')" value="'+prixBase+'" id="bp_'+j+'">+</button>' +
+      // ici un bouton qui va gerer la quantité vers le haut, grace a la fonction quantitePlus sur le click
+      '<button class="quantityPlus" onclick="quantitePlus(' +
+      j +
+      ')" value="' +
+      prixBase +
+      '" id="bp_' +
+      j +
+      '">+</button>' +
       "</div>" +
-      '<p id="prixQuantity'+j+'">' +
+      // ici le prix total de l'article qui va s'incrémenter a chaque ajout ou suppression d'une quantité
+      '<p id="prixQuantity' +
+      j +
+      '">' +
       article.prix +
       " €" +
       "</p>";
     panierHTML.append(listArticle);
-    total.innerHTML =
-       totalPrix + "€" ;
-      j++
+    total.innerHTML = totalPrix + "€";
+    j++;
   });
- 
 }
 
-
-
 function reset() {
-  // compteur.classList.add("invisible");
+  // fonction qui renitialise le panier a chaque ouverture pour actualisé les quantités et le total
   document.getElementById("panier").innerHTML = "";
- 
 }
 
 $(document).ready(function () {
@@ -434,7 +469,7 @@ $(document).ready(function () {
   // j'ajoute une fonction au click sur chaque bouton avec la classe 'achat'
   $(".achat").click(function () {
     // je stock l'id du bonton clicker dans une variable prix (l'id des bouton correspondent aux prix du livre)
-    
+
     var prix = $(this).attr("id");
     console.log($(this).attr("value"));
     // le ParseFloat permet de changer la valeur string en nombre decimal
@@ -464,13 +499,12 @@ $(document).ready(function () {
     // on parcours le panier pour verifié si un article y est deja, dans ce cas on ne le push pas
     // on incrémente juste la quantité
     articleExistant = panier.find((a) => a.nom == article.nom);
-   // vérification s'il existe + incrémentation
+    // vérification s'il existe + incrémentation
     if (articleExistant != undefined) {
-     
       console.log("deja existant");
       // s'il existe on lui incrémente la quantité
       articleExistant.quantity++;
-      
+
       // on incrémente le prix
       articleExistant.prix += article.prix;
       // on reinitialise la valeur exist a false
@@ -492,52 +526,53 @@ $(document).ready(function () {
       compteur.classList.remove("animation");
     }, 500);
   });
-  
 });
-
-async function quantitePlus(idbtn){
-  let totalPanier = document.getElementById("total")
-  let valuePrix = document.getElementById('bp_' + idbtn.toString()).value;
-  let prixSeul = parseFloat(valuePrix)
-  let quantity = document.getElementById('p_' + idbtn.toString());
-  let prixQuantity = document.getElementById('prixQuantity'+idbtn.toString());
-  article.quantity ++;
-  quantity.innerText = parseInt(quantity.innerText)+1; 
-  prixQuantity.innerText = parseFloat(prixQuantity.innerText)+prixSeul+"€";
+//fonction pour augmenter la quantité dans le panier
+async function quantitePlus(idbtn) {
+  // on cible le total du panier pour pouvoir l'incrementer
+  let totalPanier = document.getElementById("total");
+  // on cible la bonne balise pour l'article correspondant grace a l'id unique possible avec la variable j
+  let valuePrix = document.getElementById("bp_" + idbtn.toString()).value;
+  // on transforme le prix en nombre decimal pour effectuer le calcul
+  let prixSeul = parseFloat(valuePrix);
+  // on cible la balise correspondant au bon article grace a l'id unique
+  let quantity = document.getElementById("p_" + idbtn.toString());
+  let prixQuantity = document.getElementById("prixQuantity" + idbtn.toString());
+  // on incrémente la quantité
+  article.quantity++;
+  // on affiche a l'écran l'incrémentation
+  quantity.innerText = parseInt(quantity.innerText) + 1;
+  // on modifi aussi le total de l'article en fonction de sa quantité
+  prixQuantity.innerText = parseFloat(prixQuantity.innerText) + prixSeul + "€";
   totalPrix = totalPrix + prixSeul;
-  prixAffichable = totalPrix.toString()
-  totalPanier.innerText = prixAffichable+"€"
-  
-  
-
+  // on incrémente le total du panier
+  prixAffichable = totalPrix.toString();
+  totalPanier.innerText = prixAffichable + "€";
 }
-
-async function quantiteMoins(idbtn){
-  let totalPanier = document.getElementById("total")
-  let valuePrix = document.getElementById('bm_' + idbtn.toString()).value;
-  let prixSeul = parseFloat(valuePrix)
-  let quantity = document.getElementById('p_'+idbtn.toString())
-  let prixQuantity = document.getElementById('prixQuantity'+idbtn.toString());
-  article.quantity --;
-  if(article.quantity <= 0){
-    article.existe = false
+// fonction pour baisser la quantité dans le panier même fonctionnement que quantitePlus() mais avec le -
+async function quantiteMoins(idbtn) {
+  let totalPanier = document.getElementById("total");
+  let valuePrix = document.getElementById("bm_" + idbtn.toString()).value;
+  let prixSeul = parseFloat(valuePrix);
+  let quantity = document.getElementById("p_" + idbtn.toString());
+  let prixQuantity = document.getElementById("prixQuantity" + idbtn.toString());
+  article.quantity--;
+  if (article.quantity <= 0) {
+    article.existe = false;
     articleSupprimer = panier.find((a) => a.existe == false);
     console.log(articleSupprimer);
     panier.splice(articleSupprimer);
   }
-  quantity.innerText = parseInt(quantity.innerText)-1;
-  prixQuantity.innerText = parseFloat(prixQuantity.innerText)-prixSeul+"€";
+  quantity.innerText = parseInt(quantity.innerText) - 1;
+  prixQuantity.innerText = parseFloat(prixQuantity.innerText) - prixSeul + "€";
   totalPrix = totalPrix - prixSeul;
-  prixAffichable = totalPrix.toString()
-  totalPanier.innerText = prixAffichable+ "€"
-  
-  
-  }
+  prixAffichable = totalPrix.toString();
+  totalPanier.innerText = prixAffichable + "€";
+}
 
 /* bouton Faire défiler vers le haut de la page. */
-$("#onTop").click(function(){
-  $('html,body').animate({scrollTop: 0}, 'slow');
-})
-
+$("#onTop").click(function () {
+  $("html,body").animate({ scrollTop: 0 }, "slow");
+});
 
 // #endregion

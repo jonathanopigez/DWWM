@@ -466,6 +466,13 @@ font-family: 'Fredoka One', cursive;
 
     
   }
+
+  #zone_meteo{
+    width: 100%;
+    left: 0;
+    top: 80px;
+    position: absolute;
+  }
  .titleBD{
    top: 4px;
  }
@@ -489,7 +496,7 @@ font-family: 'Fredoka One', cursive;
     height: 0px;
   }
   .trie{
-    width: 67%!important;
+    width: 80%!important;
   }
 
 .navbar{
