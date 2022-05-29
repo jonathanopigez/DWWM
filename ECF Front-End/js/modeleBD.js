@@ -1,8 +1,8 @@
-const searchInput = document.querySelector("#search");
-const searchResult = document.querySelector(".table-results");
-const panierHTML = $("#panier");
-const nav = $("#nav");
-const total = document.getElementById("total");
+const searchInput = document.querySelector("#search"); // barre de recherche
+const searchResult = document.querySelector(".table-results"); // div qui contient le resultat de la recherche
+const panierHTML = $("#panier"); // panier
+const nav = $("#nav"); // nav
+const total = document.getElementById("total"); // total du panier
 const srcImg = "images/"; // emplacement des images de l'appli
 const albumDefaultMini = srcImg + "noComicsMini.jpeg";
 const albumDefault = srcImg + "noComics.jpeg";
@@ -11,7 +11,7 @@ const srcAlbum = "albums/"; // emplacement des images des albums en grand
 const buttonAuteur = $("#trieAuteur");
 const buttonAlbums = $("#trieAlbums");
 const albumsArray = "data/albums.js";
-var nbrArticle = 0;
+var nbrArticle = 0; // nombre d'article dans le panier
 
 jQuery(document).ready(function ($) {
   // création du compteur de notification (petite bulle rouge sur le logo panier)
