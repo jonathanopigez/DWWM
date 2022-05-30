@@ -1,0 +1,47 @@
+ECF Front-End 
+--------------------------
+Jonathan OPIGEZ 
+------------------------
+29/05/2022 Afpa Evreux
+-------------------------------------------
+
+---------------------------------------------------------------------------------------------------
+
+	&	UTILISATION COMPLETE DU FRONTEND (HTML, CSS, JAVASCRIPT)	&
+	&	UTILISATION DE PLUSIEUR LIBRAIRIE (BOOTSTRAP, JQUERY)		&
+	&	UTILISATION D'UNE API METEO (http://api.weatherapi.com)		&
+	&		MOBILE FIRST !!! POUR IPHONE 12 PRO			&
+
+
+---------------------------------------------------------------------------------------------------
+
+
+1] HTML
+	.utilisation de balise simple pour organiser la page
+	.utilisation d'un accordions bootstrap pour le panier
+
+2] CSS
+	.utilisation du flex (justify-content, align-item...)
+	.utilisation de grid (pour la liste des livres et le panier)
+	.mise en place du style grace a des border, les colors et differentes font
+	.mise en place de mediaQuery pour le format iphone12 Pro
+	.utilisation d'animation simple pour l'api meteo sur le hover un slideleft avec une opacity qui passe a 1, et sur la bulle de notification qui s'active a chaque
+	ajout d'article
+
+3]
+	.utilisation de fonction pour aller chercher chaque titre/auteur/prix dans les fichier donner
+	.pouvoir effectuer une recherche avec le nom de l'auteur
+	.fonction pour creer la liste des livres avec un bouton d'ajout au panier qui va lui même lancer plusieur fonctions
+	.création du panier grâce a une fonction qui va chercher les articles clicker et les stoker dans un tableau
+	.fetch d'une api meteo
+	.utilisation de fonction async
+	.utilisation de plusieurs methodes toLowerCase/JSON.Stringify/ParseFloat/
+	.utilisation de boucle for, forEach
+
+
+-----------------------------------------------------------------------------------------------------
+
+LE CODE EST COMMENTER FREQUEMENT POUR UNE BONNE LISIBILITE, CHAQUE FONCTION EST EXPLIQUER ET CHAQUE VARIABLE NOMMEE LE PLUS FIDELEMET POSSIBLE
+
+
+	

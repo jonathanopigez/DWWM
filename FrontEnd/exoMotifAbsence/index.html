@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>motifAbsence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="chargeInfo(),appearDate()">
+    <div class="contenu">
+        <form method="get" action="secondepage.html">
+        <h4 class="title1">identification</h4>
+       
+        <div class="identification">
+          
+            
+                <div class="gauche">
+                    <h5>Nom :</h5>
+                    <h5>Prénom :</h5>
+                    <h5>Formation suivie :</h5>
+                </div>
+                <div class="droite">
+                    <input type="text" name="nom" id="nom" placeholder="Votre Nom" required>
+                    <input type="text" name="prenom" id="prenom" placeholder="Votre Prénom" required>
+                    <select name="formation" id="formation" required>
+                        <label for="formation">Veuilez choisir votre formation</label>
+                        <option value="CDA">CDA</option>
+                        <option value="DWWM">DWWM</option>
+                        <option value="TSSR">TSSR</option>
+                        <option value="VCM">VCM</option>
+                    </select>
+                </div>
+
+        </div>
+        <h4 class="title2">Demande l'autorisation de s'absenter du centre</h4>
+       
+            
+           
+        <div class="demande">
+                
+            <input onclick="appearDate()" type="radio" value="Un--jour" name="duree" id="unjour" checked/> <label for="unjour">Un jour au moins</label>
+            <input onclick="appearDate()" type="radio" value='Plusieurs--jours' name="duree" id="plusieursjours"/> <label for="plusieursjours">Plus d'un jour</label> 
+           
+                <div class="gauchedroite1" id="element1">
+                     <div class="gauche">
+               
+                            <h5>le :</h5>
+                            <h5>de :</h4>
+                            <h5>à :</h5>
+                     </div>
+                     <div class="droite">
+                            <input type="date" name="date" id="date">
+                            <input type="datetime" placeholder="heure de départ" name="time" id="time1"  >
+                            <input type="datetime" placeholder="heure de fin" name="time" id="time2"  >
+                    </div>
+                </div>
+
+
+                
+                <div class="gauchedroite2" id="element2">
+                    <div class="gauche">
+              
+                           <h5>Du :</h5>
+                           <h5>Au :</h4>
+                    </div>
+                    <div class="droite">
+                           <input type="date" name="date" id="date" >
+                           <input type="date" name="date" id="date2" min="#date" >
+                           
+                   </div>
+               </div>
+        </div>
+
+        
+        <div class="motifsection"></div>
+       
+        <div class="button">
+        <button  type="submit" onclick="getInformation()">Envoyer</button>
+    </div>
+        </div>
+        
+    </form>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="javascript.js"></script>
+   
+</body>
+</html>

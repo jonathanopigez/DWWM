@@ -1,0 +1,47 @@
+body {
+  background-color: #212121;
+}
+
+h1 {
+  background-color : #0288D1;
+  color : white;
+  width : 800px;  
+}
+
+div { 
+  line-height : 0px;
+}
+
+section {
+  display : inline-block;
+  width : 150px;
+  height : 150px;
+  
+  background-color: #0288D1;       
+
+}
+
+
+article {  
+  display : inline-block;   
+  text-align: center;
+
+  background-color: #03A9F4;
+  
+  width : 100%;
+  height : 100%;
+  
+}
+
+div:nth-of-type(even) section:nth-of-type(odd) article,
+div:nth-of-type(odd) section:nth-of-type(even) article
+{
+  background-color: #FFC107;
+}
+
+div:nth-of-type(odd) section:nth-of-type(odd) article,
+div:nth-of-type(even) section:nth-of-type(even) article
+{
+  background-color: #8BC34A;
+}
+

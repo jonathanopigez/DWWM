@@ -1,0 +1,513 @@
+body {
+  font: 1em sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 600;
+  
+}
+
+form {
+  max-width: 300px;
+  margin: 0;
+  padding: 0 5px;
+}
+
+p>label {
+  display: block;
+}
+
+legend {
+  background-color: #000;
+  color: #fff;
+  padding: 3px 6px;
+}
+
+input[type=text],
+input[type=email],
+input[type=number],
+textarea,
+fieldset {
+  /* requis pour composer de manière appropriée les éléments
+     de formulaire sur les navigateurs fondés sur WebKit */
+  -webkit-appearance: none;
+
+  width: 100%;
+  border: 1px solid #333;
+  margin: 0;
+
+  font-family: inherit;
+  font-size: 90%;
+
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+
+#erreur {
+  color: red;
+}
+
+.main{
+  margin-top: 250px;
+}
+
+
+.input-control{
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  background-color: #dbdbdb;
+  border-radius: 6px;
+  padding: 15px;
+  justify-content: center;
+  
+}
+
+.input-control img{
+  width: 20px;
+  position: relative;
+  top: 3px;
+}
+
+.input-control input{
+  width: 100%;
+  font-size: 18px;
+  padding-left: 10px;
+  outline: 0;
+  border: 0;
+  color: #000;
+  background-color: #dbdbdb;
+  
+}
+
+.input-control input::placeholder{
+  color: #838f9f;
+}
+
+.main-title{
+  margin: 30px 0;
+  font-weight: 800;
+  border-bottom: 2px solid rgba(233, 186, 33, 0.856);
+  
+}
+
+/* Table */
+
+.table{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.table-results{
+  grid-column: 1 /-1;
+}
+
+.table-title{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-weight: 100;
+  color: rgb(233, 180, 33);
+  font-family: 'Fredoka One', cursive;
+}
+
+.table-item{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  padding: 15px 10px;
+  background-color: #fff;
+}
+
+.table-item:nth-child(odd){
+  background-color: #dbdbdb;
+}
+
+.container-image img{
+  width: 100px;
+  margin-right: 10px;
+}
+
+.table-item p {
+  padding: 15px;
+  font-size: 1.2em;
+  opacity: .9;
+  
+}
+
+button{
+  cursor: pointer;
+  width: 100px;
+  border: 2px transparent ;
+  background-color: rgb(255, 166, 0);
+  height: 50px;
+  border-radius: 9px;
+  transition: .5s;
+}
+
+button img{
+  height: 30px;
+}
+
+button:hover{
+  background-color: rgb(218, 141, 0);
+}
+
+.filtericon{
+  height: 40px;
+  margin: 10px;
+}
+.trie{
+  
+  background: #dbdbdb;
+  width: 19.4%;
+  border-radius: 9px;
+  display: flex;
+  margin: 20px;
+}
+.trie div {
+  
+  font-size: 1.5em;
+  cursor: pointer;
+  height: 100%;
+  padding: 10px;
+  transition: .5s;
+}
+
+
+.btn-trie:hover{
+  background-color: #acacac;
+}
+
+
+#trieAlbums{
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+.navbar{
+background-color: white;
+display: flex;
+justify-content: space-between;
+position: fixed;
+z-index: 1;
+top: 0;
+-webkit-box-shadow: 0px 0px 49px 8px rgba(109,109,109,0.95); 
+box-shadow: 0px 0px 49px 8px rgba(109,109,109,0.95);
+height: 120px;
+
+ 
+}
+.titleBD{
+ position: absolute;
+color: rgb(68, 68, 68);
+font-size: 2.5em;
+margin: 10px;
+font-family: 'Fredoka One', cursive;
+}
+.titleBD .logo{
+  padding-bottom: 25px;
+}
+
+
+.paniertitle {
+  font-weight: 800;
+  padding-top: 10px;
+  color: rgb(255, 153, 1);
+}
+#panier{
+  
+  padding: 50px;
+  
+}
+.logo{
+  height: 80px;
+  margin-right: 15px;
+}
+
+.hautpage{
+  display: none;
+}
+.logoFeather{
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+.logopanier{
+  position: absolute;
+  opacity: .8;
+  height: 35px;
+  cursor: pointer;
+  right: 50px;
+
+  
+  
+}
+
+#compteur{
+  font-size: .8rem;
+  position: absolute;
+  
+  right: 45px;
+  background-color: rgb(243, 94, 94);
+  color: rgb(255, 255, 255);
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  padding-left: 7.5px;
+  padding-top: 3.9px;
+  
+  
+  
+  
+ 
+
+  
+  
+}
+
+#total{
+  font-size: 2em;
+  color: green;
+}
+
+.animation{
+  animation: shake 1s linear;
+  
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+.quantityContainer{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 32px;
+  width: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.397);
+  
+}
+
+.quantityContainer button{
+  height: 30px;
+  width: 30px;
+ border-radius: 0%;
+  padding: 0px;
+  font-weight: 800;
+}
+
+.quantityContainer p{
+  margin-top: 13px;
+}
+
+
+.accordion-item{
+  position: absolute;
+  border: none;
+  right: 0;
+  width: 40%;
+
+ 
+}
+
+.accordion-collapse{
+  position: absolute;
+  overflow-y: scroll;
+  border: solid 1px rgba(0, 0, 0, 0.26);
+  border-top: 10px transparent;
+  margin-top: 59px;
+  -webkit-box-shadow: -1px 11px 25px 1px #696969; 
+  box-shadow: -1px 11px 25px 1px #8b8b8b;
+  max-height: 850px;
+  background-color: white;
+}
+
+
+.footer{
+  padding: 20px;
+  font-size: 1.2em;
+}
+
+#panier .table-item{
+  grid-template-columns: repeat(4,1fr);
+  
+}
+#zone_meteo{
+ position: absolute;
+ display: flex;
+ flex-direction: column;
+ left: 28%;
+ background-color: rgba(105, 41, 4, 0.781);
+ padding: 10px;
+ color: white;
+ height: 120px;
+ border-left: solid 2px rgb(124, 124, 124);
+ border-right: solid 2px rgb(121, 121, 121);
+}
+
+#zone_meteo .currentWeather{
+  position: absolute;
+  left: 80px;
+  height: 100px;
+  width: 100px;
+  top: 30px;
+  
+}
+
+.meteoinfos{
+  display: flex ;
+  flex-direction: row;
+}
+
+.infosadd{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 30px;
+  top: 40px;
+  opacity: 0;
+  transition: 1s;
+ 
+}
+#zone_meteo:hover .infosadd{
+  
+  opacity: 1!important;
+  animation: slideLeft 1s ease-in;
+
+}
+
+@keyframes slideLeft{
+  0% {
+    transform: translateX(-100%);
+    visibility: visible
+  }
+  100%{
+    transform:translateX(0)
+  }
+}
+
+
+.rangement{
+  display: flex;
+}
+
+.rangement img{
+  height: 25px;
+  margin-right: 20px;
+}
+
+.hautdepage{
+  position: fixed;
+  left: 100px;
+  bottom: 10px;
+}
+
+.hautdepage span{
+  color: #fcc01b;
+  opacity: 0;
+  transition: .4s;
+}
+
+.up{
+  position: fixed;
+  left: 100px;
+  bottom: 10px;
+  height: 80px;
+  transition: .4s;
+}
+
+.up:hover{
+  bottom: 40px;
+}
+
+#onTop:hover span{
+  opacity: 1;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 700px) {
+  .table{
+    display: block;
+  }
+  .table-title{
+    display: none;
+    
+  }
+  .table-item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    height: auto;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    
+
+    
+  }
+
+  #zone_meteo{
+    width: 100%;
+    left: 0;
+    top: 80px;
+    position: absolute;
+  }
+ .titleBD{
+   top: 4px;
+ }
+
+  .table-item p {
+    padding: 0;
+    margin: 0;
+  }
+
+  .table-item button {
+    width: 100%;
+  }
+
+  .navbar h1{
+    font-size: 0;
+  }
+
+  .navbar h1 .logoFeather{
+    position: absolute;
+    left: 35px;
+    height: 0px;
+  }
+  .trie{
+    width: 80%!important;
+  }
+
+.navbar{
+  height: 80px!important;
+}
+.accordion-item{
+  
+  width: 80%!important;
+  
+ 
+}
+
+
+}

@@ -1,0 +1,41 @@
+{
+    "nom":"Déclic Pizza",
+    "slogan":"Manger gras c'est bien !",
+    "pizzas":[
+        {
+            "nom": "4 fromages",
+            "prix": 12.99,
+            "image": "https://www.commerces-de-france.fr/wp-content/uploads/2020/04/4_fromages.png",
+            "garniture":[
+                "Fromage bleu",
+                 "Gorgonzola",
+                 "Cheddar"
+            
+            ]
+        },
+        {
+            "nom": "Pizza Chorizo",
+            "prix": 12.99,
+            "image": "https://www.seekpng.com/png/full/52-520178_mushroom-pizza-png-images-download-half-half-pizza.png",
+            "garniture":[
+                "Chorizo",
+                "Poivron",
+                "Persil"
+            
+            ]
+        },
+        {
+            "nom": "La Napolitaine",
+            "prix": 12.99,
+            "image": "https://www.pngkit.com/png/full/4-41052_vegetarian-pizza-vegetarian-pizza-top-view.png",
+            "garniture":[
+                 "Poivrons",
+                 "Champignons",
+                 "Olives noirs"
+            
+            ]
+        }
+    ]
+    
+
+}

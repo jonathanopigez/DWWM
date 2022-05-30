@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+    <title>Les BD</title>
+</head>
+
+<body>
+    <div class="container hautpage">
+        <h1>Liste des BD</h1>
+
+        <div class="row">
+            <div class="col-sm-4 col-lg-6">
+                <p id="messageId">
+                    <label for="id">Id de l'album :</label>
+                    <input type="number" required id="id" value="0" min="0" title="Saisissez un numéro et validez">
+                </p>
+                <p>
+                    <label for="serie">Série :</label>
+                    <input type="text" id="serie" readonly>
+
+                    <label for="numero">Album N° :</label>
+                    <input type="text" id="numero" readonly>
+
+                    <label for="titre">Titre :</label>
+                    <input type="text" id="titre" readonly>
+
+                    <label for="auteur">Auteur :</label>
+                    <input type="text" id="auteur" readonly>
+                </p>
+                <p>
+                    <label for="prix">Prix :</label>
+                    <input type="number" id="prix" readonly>
+                </p>
+                <div is="toto">
+                    <img src="images/noComicsMini.jpeg" id="albumMini">
+                </div>
+            </div>
+            <div class="col-sm-8 col-lg-6">
+
+                <img src="images/noComics.jpeg" id="album">
+
+            </div>
+        </div>
+    </div>
+    
+        <nav class="navbar container-fluid" id="nav" >
+            
+            <h1 class="titleBD" id="titleBD"><img src="images/open-book.png" alt="" class="logo">BDothèque <img src="images/feather-pen.png" alt="" class="logoFeather"></h1>
+            <div id="zone_meteo"></div>
+           <div class="panier-icons">
+            
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item ">
+                 
+                   
+                    <img data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"  src="images/sac-de-courses.png" alt="" class="logopanier"><h5 class="invisible" id="compteur"></h5>
+                
+                  
+                  <div id="collapseOne" class="accordion-collapse collapse scrollable" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-header">
+                        <h2 class="paniertitle">Mon panier :</h2>
+                    </div>
+                    <div class="accordion-body scroller" id='panier'>
+                       
+                      
+                    </div>
+                    <div class="footer">
+                        <p > Total de votre commande : <p id="total"></p> </p>
+           
+                        <button onclick="reset()" type="button" data-bs-dismiss="collapse">Payer</button>
+                    </div>
+                  </div>
+                </div>
+   
+              </div>
+        </nav>
+      
+      <main class="main container">
+          <div class="hautdepage"id="onTop">
+<img class="up" src="images/up-arrow.png"><span>Haut de page</span></div>
+        <div class="input-control">
+            <label for="search">
+                <img src="images/search-interface-symbol.png" alt="">
+            </label>
+            <input type="text" id="search" placeholder="Rechercher un livre">
+        </div>
+        <h2 class="main-title">Collection</h2>
+        <div class="trie">
+            
+            <img class="filtericon" src="images/filter.png" alt="">
+            <div id="trieAuteur" class="btn-trie" onclick="trieParAuteur()">Auteurs</div>
+            <div id="trieAlbums" class="btn-trie" onclick="trieParAlbums()">Albums</div>
+        </div> 
+            <div class="table">
+                <h3 class="table-title"></h3>
+                <h3 class="table-title">Album</h3>
+                <h3 class="table-title">Titre</h3>
+                <h3 class="table-title">Auteur</h3>
+                <h3 class="table-title">Prix</h3>
+                <h3 class="table-title">Achat</h3>
+            </div>
+
+            <div class="table-results">
+
+     
+
+
+            </div>
+
+            
+
+      </main>
+      
+
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="data/albums.js"></script>
+    <script src="data/series.js"></script>
+    <script src="data/auteurs.js"></script>
+    <script src="js/modeleBD.js"></script>
+    <script src="js/meteo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <title>Myuka</title>
+</head>
+
+<body>
+    <div class="page container form">
+        <div class="header container">
+            <h1>Myuka</h1>
+            <span>Obtenez des informations sur les produits alimentaires</span>
+        </div>
+        <div class="search container">
+            <form class="form1" action="texte">
+                <input class="input" type="text">
+                <button class=" btn btn-success">Scanner</button>
+            </form>
+
+        </div>
+        <h3>Oreo Original Pocket 220g</h3>
+        <div class="produit container">
+
+            <div class="gauche">
+
+                <div class="slider">
+
+
+
+
+                    <div class="slides">
+                        <div id="slide-1">
+                            <img src="/image/286544_3.jpg" alt="">
+                        </div>
+                        <div id="slide-2">
+                            <img src="/image/oreofr.png" alt="">
+                        </div>
+                        <div id="slide-3">
+                            <img src="/image/télécharger.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="droite">
+                <div class="ingredient">
+                    <h3>Ingrédients :</h3>
+                    <p> Farine de BLÉ, sucre, huile de colza, huile de palme, sirop de glucose-fructose, amidon
+                        de BLÉ, poudre à lever (carbonates de sodium, carbonates d'ammonium), sel, émulsifiants
+                        (lécithine
+                        de SOJA, lécithine de tournesol), arômes. PEUT CONTENIR LAIT</p>
+                </div>
+            </div>
+        </div>
+        <div class="allergene container">
+            <div class="allergie container">
+                <h3>allergènes :</h3>
+                <h5>Gluten |</h5>
+                <h5>Soja |</h5>
+                <h5>Lait |</h5>
+                <h5>Fruits a coque |</h5>
+                <h5>Arachides |</h5>
+                <h5>Oeufs</h5>
+            </div>
+        </div>
+        <div class="cards container">
+            <div class="card col-md-4">
+                <img class="environnement" src="/image/NOVA_group_4.svg" alt="">
+            </div>
+            <div class="card col-md-4">
+                <img class="environnement" src="/image/Nutri-score-E.svg" alt="">
+            </div>
+            <div class="card col-md-4">
+                <img class="environnement" src="/image/Eco-score E.svg" alt="">
+            </div>
+        </div>
+
+        <div class="infos container">
+            <h3>Caractéristiques du produit</h3>
+            <p>
+                <b>Dénomination générique</b> : Biscuits cacaotés, fourrés goût vanille 29 % - Biscuit Oreo <br>
+
+                <b>Quantité</b> : 176g <br>
+
+                <b> Conditionnement</b> : Plastique, Boîte, Carton, Récipient, Carton non ondulé, Sachet plastique, Étui
+                carton <br>
+
+                <b> Marques</b> : Oreo <br>
+
+                <b>Catégories </b>: Snacks, Snacks sucrés, Biscuits et gâteaux, Biscuits, Biscuits au chocolat, Biscuits
+                fourrés, Biscuits cacaotés fourrés goût vanille <br>
+
+                <b>Labels, certifications, récompenses</b> : Point Vert, Tidy man <br>
+
+                <b>Lieux de fabrication ou de transformation</b> : République Tchèque <br>
+
+                <b>Lien vers la page du produit sur le site officiel du fabricant</b> : <a
+                    href="http://www.oreo.eu/">http://www.oreo.eu/</a> <br>
+
+                <b>Magasins</b> : Cora, Irma.dk, Leader Price, Delhaize <br>
+
+                <b>Pays de vente</b> : Belgique, Canada, France, Allemagne, Maurice, La Réunion, Espagne, Suisse
+            </p>
+        </div>
+        <footer class="footer container">
+            <!--ButtonModal-->
+            <button class="d-block mt-5 btn btn-success mx-auto" data-bs-toggle="modal"
+                data-bs-target="#modal1">Contactez-nous</button>
+            <!--Modal-->
+            <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modallabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" aria-labelledby="modal title">Formulaire</h5>
+                            <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                        </div>
+                        <div class="modal-body" aria-describedby="content">
+                            <fieldset>
+                                <form class="form2" method="post" action="mailto:opigezjonathan@gmail.com">
+                                    <label class="titre">Nom :</label> <input required class="texte" type="text"
+                                        size="10" maxlength="40" name="name" /><br />
+                                    <hr>
+                                    <label class="titre">Prénom :</label> <input required class="texte" type="text"
+                                        size="10" maxlength="40" name="name" /><br />
+                                    <hr>
+                                    <label class="titre">Email :</label> <input required class="texte" type="mail"
+                                        name="mail" /> <br>
+                                    <hr>
+                                    <label class="titre">Mot de passe :</label> <input required class="texte"
+                                        type="password" minlength="8" name="password" />
+                                    <hr>
+                                    <label class="titre">
+                                        Veuillez saisir votre date de naissance :</label>
+                                    <input type="date" name="bday" required>
+
+                                    <hr>
+                                    <label> <span class="titre">Sexe :</span></label> <br />
+                                    <input type="radio" name="h" value="homme" /> Homme <br />
+                                    <input type="radio" name="f" value="femme" /> Femme <br />
+                                    <hr>
+                                    <label class="titre"> Quelle est votre Régime alimentaire ?</label>
+                                    <input type="checkbox" name="aucun" value="aucun" /> Aucun régime <br />
+                                    <input type="checkbox" name="regime" value="vegetarien" /> Végétarien <br />
+                                    <input type="checkbox" name="regime" value="vegan" /> Végan <br />
+                                    <input type="checkbox" name="regime" value="lactose" /> Sans lactose <br />
+                                    <input type="checkbox" name="regime" value="gluten" /> Sans gluten<br />
+                                    <hr>
+                                    <div class="button">
+                                        <textarea class="textearea" rows="5" cols="80" wrap="off" name="commentaires"
+                                            placeholder="Ecrivez un commentaire..."></textarea>
+                                    </div>
+                                </form>
+                            </fieldset>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                            <button class="btn btn-success" type="submit" value="envoyer">Envoyer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

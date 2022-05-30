@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+
+}
+
+.animated-background{
+    background: linear-gradient( to right, #162534, #1b404a, #3bbd64);
+    background-size: 400% 400%;
+    display: flex;
+    justify-content:center ;
+    animation: animate-background 10s infinite ease-in-out;
+    flex-direction: column;
+    align-items: center;
+    height: 900px;
+    
+   
+}
+
+.title{
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    margin: 30px;
+
+}
+#game{
+    width: 500px;
+    height: 200px;
+    border: solid 1px rgb(255, 255, 255);
+    background: url(/images/ljQ74o.png);
+    background-size: 80%;
+    background-position: center;
+    
+    
+    
+}
+
+.animate-background{
+    animation: background 10s linear infinite;
+}
+
+@keyframes background{
+    0%{background-position-x: 480px ;}
+    100%{background-position-x: -480px ;}
+}
+
+#character{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    top: 100px;
+    z-index: 1;
+   
+    
+}
+.animate{
+    animation: jump  300ms;
+}
+
+
+@keyframes jump{
+    0% {top:80px;}
+    30%{top:50px;}
+    70%{top:50px;}
+    100%{top:80px;}
+}
+
+@keyframes rotate{
+    0%{rotate: 0deg;}
+    100%{rotate: 45deg;}
+}
+#block{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    top: 80px;
+    left: 480px;
+    z-index: 1;
+   
+}
+
+.start{
+    animation: block 1s infinite linear;
+}
+
+#play{
+    position:absolute;
+    margin-left: 150px;
+    margin-top: 25px;
+    animation: opacity 1s linear infinite;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+
+}
+
+
+
+.invisible{
+    visibility: hidden;
+}
+
+
+
+@keyframes opacity{
+    0% {opacity: 100%;}
+    30% {opacity: 50%;}
+    50%{opacity: 0%;}
+    70% {opacity: 50%;}
+    100%{opacity: 100%}
+}
+
+
+@keyframes block{
+0%{left: 480px;}
+100%{left: -50px;}
+
+}
+
+#floor{
+    height: 50px;
+    width: 500px;
+    position: relative;
+    top: 80px;
+    background: #162534; 
+    z-index: 0;
+    animation: background 10s linear infinite;
+}

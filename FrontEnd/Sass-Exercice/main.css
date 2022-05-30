@@ -1,0 +1,17 @@
+body {
+  display: grid;
+  grid-template-columns: 300px 800px;
+  background-color: #eee;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  background-color: #444;
+}
+header h1 {
+  font-family: "Grand Hotel", sans-serif;
+  color: #ff0;
+}
+
+/*# sourceMappingURL=main.css.map */
